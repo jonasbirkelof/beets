@@ -1,0 +1,205 @@
+:root {
+	--border-color: rgba(0, 0, 0, .1);
+	--border-color-dark: rgba(255, 255, 255, .2);
+	--border-radius-sm: 6px;
+	--border-radius: 10px;
+	--border-radius-lg: 16px;
+	--code-bg-color: rgba(210, 220, 230, 0.2);
+	--code-bg-color-dark: rgb(0, 0, 0, .3);
+	--inline-code-bg-color: rgba(175, 184, 193, 0.2);
+	--inline-code-bg-color-dark: rgba(0, 0, 0, .4);
+}
+
+/* Scheme customization */
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+	--md-primary-fg-color:			#00415b;
+	--md-primary-fg-color--light: 	#259ac9;
+	--md-primary-fg-color--dark: 	#012f49;	
+
+	.md-content a {
+		color: var(--md-primary-fg-color--light);
+	}
+	.md-content a:hover {
+		color: var(--md-accent-fg-color);
+	}
+}
+
+/* Nav link accent color */
+.md-nav__item .md-nav__link--active {
+	color: var(--md-accent-fg-color);
+}
+
+/* Prevent enlargement of font size on bigger screen sizes */
+@media screen and (min-width:100em) {
+	html {
+		font-size: 125%
+	}
+}
+
+/* Headers */
+h1, h2, h3, h4, h5 {
+	color: #000 !important;
+}
+body[data-md-color-scheme='slate'] {
+	h1, h2, h3, h4, h5 {
+		color: #fff !important;
+	}
+}
+
+/* Images */
+.md-content img {
+	padding: 16px;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius);
+}
+body[data-md-color-scheme='slate'] {
+	.md-content img {
+		border-color: var(--border-color-dark);
+	}
+}
+
+/* Code blocks */
+.highlight th.filename,
+.highlight span.filename {
+	border-top-left-radius: var(--border-radius) !important;
+	border-top-right-radius: var(--border-radius) !important;
+}
+.highlight span.filename,
+.highlight code {
+	background-color: var(--code-bg-color) !important;
+}
+.highlight code {
+	border-radius: var(--border-radius) !important;
+	border-radius: var(--border-radius) !important;
+}
+.highlight span.filename + pre > code,
+.highlight td.linenos + td.code code {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+}
+.highlight td.linenos + td.code code {
+	border-bottom-left-radius: 0 !important;
+}
+.highlight td.linenos {
+	border-bottom-left-radius: var(--border-radius) !important;
+}
+body[data-md-color-scheme='slate'] {
+	.highlight code {
+		background-color: var(--code-bg-color-dark) !important;
+	}
+	.highlight .filename {
+		background-color: #000 !important;
+	}
+}
+
+/* Inline code block */
+.md-typeset p code {
+	font-size: 85%;
+	padding: .2em .4em;
+	background-color: var(--inline-code-bg-color);
+	border-radius: var(--border-radius-sm);
+	color: initial;
+}
+body[data-md-color-scheme='slate'] {
+	.md-typeset p code {
+		background-color: var(--inline-code-bg-color-dark);
+	}
+}
+
+/* Left and right sidebar labels */
+.md-nav__list label,
+.md-sidebar label {
+	color: #000 !important;
+}
+body[data-md-color-scheme='slate'] {
+	.md-nav__list label,
+	.md-sidebar label {
+		color: #fff !important;
+	}
+}
+
+/* Logo images on about pages */
+h1 img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 80px;
+	border: 0 !important;
+	padding: 0 !important;
+}
+
+/* Show logo in header on small screens */
+nav.md-header__inner > .md-logo {
+	display: block;
+}
+
+/* Re-order hamburger menu */
+nav.md-header__inner > label[for="__drawer"] {
+	order: -1;
+}
+
+/*
+*
+* Fixing styles affected by Bootstrap
+*
+*/
+
+.highlight code {
+	font-size: unset !important;
+}
+/* Paragraphs in admonitions should have a margin-top */
+.admonition p {
+	margin-top: 12px;
+}
+/* Demo box basic styling */
+.demo {
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.demo a {
+	color: var(--bs-link-color);
+}
+.demo a:hover {
+	color: var(--bs-link-hover-color);
+
+}
+/* Header 4 did not have a font-size */
+.md-typeset h4 {
+	/* font-size: 16px; */
+}
+table code {
+	font-size: unset !important;
+}
+
+/*
+*
+* Beets CSS Demo section
+*
+*/
+
+/* Demo section */
+.demo {
+	padding: 16px;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius);
+}
+body[data-md-color-scheme='slate'] {
+	.demo {
+		border-color: var(--border-color-dark);
+	}
+}
+
+/* Buttons */
+.demo .btn {
+	font-size: 16px;
+	padding: 6px 12px;
+	border-radius: 6px;
+}
+.demo .btn.btn-sm {
+	font-size: 14px;
+	padding: 4px 6px;
+}
+.demo .btn.btn-lg {
+	font-size: 20px;
+	padding: 8px 16px;
+}

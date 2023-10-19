@@ -1,0 +1,86 @@
+site_name: Beets Documentation
+theme:
+  logo: assets/images/beets_icon_col_250x250.png
+  custom_dir: docs/overrides/
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      accent: orange
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      accent: amber
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - content.code.copy
+    - navigation.top
+  icon:
+    repo: fontawesome/brands/github
+extra_css:
+  - assets/stylesheets/custom.css
+nav:
+  - Home: index.md
+  - Beets CSS:
+    - Home: beets-css/index.md
+    - Getting started: beets-css/getting-started.md
+    - Download: https://github.com/jonasbirkelof/beets-css
+    - Forms:
+      - Checks and radios: beets-css/forms/checks-and-radios.md
+    - Components:
+      - Breadcrumb: beets-css/components/breadcrumb.md
+      - Buttons: beets-css/components/buttons.md
+      - Callout: beets-css/components/callout.md
+      - Card: beets-css/components/card.md
+      - Dropdowns: beets-css/components/dropdowns.md
+      - Modal: beets-css/components/modal.md
+    - Utilities:
+      - Colors: beets-css/utilities/colors.md
+      - Cursor: beets-css/utilities/cursor.md
+      - Spacing: beets-css/utilities/spacing.md
+  - Beets Layout:
+    - About: beets-layout/index.md
+    - Download: beets-layout/download.md
+    - Install: beets-layout/install.md
+    - Sections:
+      - Overview: beets-layout/section/overview.md
+      - Logo: beets-layout/section/logo.md
+      - Sidebar: beets-layout/section/sidebar.md
+      - Main: beets-layout/section/main.md
+      - Header: beets-layout/section/header.md
+      - Body: beets-layout/section/body.md
+      - Footer: beets-layout/section/footer.md
+  - Beets PHP:
+    - Om Beets PHP: beets-php/index.md
+plugins:
+  - search
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+repo_url: https://github.com/jonasbirkelof/beets
+repo_name: jonasbirkelof/beets
