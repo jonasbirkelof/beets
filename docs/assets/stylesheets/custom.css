@@ -11,8 +11,9 @@
 }
 
 /* Scheme customization */
-[data-md-color-scheme="default"],
-[data-md-color-scheme="slate"] {
+/* [data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] { */
+/* [data-md-color-scheme="default"] {
 	--md-primary-fg-color:			#00415b;
 	--md-primary-fg-color--light: 	#259ac9;
 	--md-primary-fg-color--dark: 	#012f49;	
@@ -23,7 +24,7 @@
 	.md-content a:hover {
 		color: var(--md-accent-fg-color);
 	}
-}
+} */
 
 /* Nav link accent color */
 .md-nav__item .md-nav__link--active {
@@ -145,8 +146,13 @@ nav.md-header__inner > label[for="__drawer"] {
 *
 */
 
+/* Fixes font size in code blocks */
 .highlight code {
 	font-size: unset !important;
+}
+/* Navigation disappears with <body> */
+body {
+	height: unset;
 }
 /* Paragraphs in admonitions should have a margin-top */
 .admonition p {

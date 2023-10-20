@@ -1,10 +1,4 @@
-<!-- ---
-hide:
-  - navigation
-  - toc
---- -->
-
-# <img src="assets/images/beetscss_col_100x416.png" style="display: block; margin-left: auto; margin-right: auto; height: 80px;">
+# ![Image title](../assets/images/beetscss_col_inv_100x416.png#only-dark) ![Image title](../assets/images/beetscss_col_100x416.png#only-light)
 
 Beets CSS is a CSS addon-library that is dependent on the [Bootstrap](https://getbootstrap.com/) framework. You will have to install Bootstrap for this library to work.
 
