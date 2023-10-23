@@ -4,8 +4,6 @@ hide:
     - toc
 ---
 
-# ![Image title](../assets/images/beets_col_inv_100x298.png#only-dark) ![Image title](../assets/images/beets_col_250x744.png#only-light)
-
 # Welcome to the Beets project!
 
 The project Beets started out as an addon to the [Bootstrap](https://getbootstrap.com) library. Adding classes that I found missing or lacking in the otherwise fully featured css library gave me a better workflow as components and functions I often used became more accessible. Now this is called [Beets CSS](https://github.com/jonasbirkelof/beets-css).
