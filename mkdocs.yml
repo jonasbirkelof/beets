@@ -2,13 +2,13 @@ site_name: Beets Documentation
 theme:
   # logo: assets/images/beets_symbol_wht_250x232.png
   logo: assets/images/beets_wht_250x744.png
-  # custom_dir: docs/overrides/
+  custom_dir: docs/overrides/
   name: material
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       primary: blue grey
-      accent: teal
+      accent: orange
       scheme: default
       toggle:
         icon: material/weather-night
