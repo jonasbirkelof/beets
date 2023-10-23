@@ -8,13 +8,13 @@
 	--code-bg-color-dark: rgb(0, 0, 0, .3);
 	--inline-code-bg-color: rgba(175, 184, 193, 0.2);
 	--inline-code-bg-color-dark: rgba(0, 0, 0, .4);
-	--md-default-fg-color--light: red !important;
+	/* --md-default-fg-color--light: red !important; */
 }
 
-[data-md-color-scheme='slate'] {
-	h1, h2, h3, h4, h5 {
-		color: rgba(255, 255, 255, 1) !important;
-	}
+body[data-md-color-scheme='slate'] {
+	--md-default-fg-color: red;
+	--md-default-fg-color--light: blue;
+	--md-default-fg-color--dark: green;
 }
 
 /* Nav link accent color */
