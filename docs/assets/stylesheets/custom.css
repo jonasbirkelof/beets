@@ -92,7 +92,6 @@ body[data-md-color-scheme='slate'] {
 	padding: .2em .4em;
 	background-color: var(--inline-code-bg-color);
 	border-radius: var(--border-radius-sm);
-	color: initial;
 }
 body[data-md-color-scheme='slate'] {
 	.md-typeset p code {
