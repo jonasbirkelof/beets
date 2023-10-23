@@ -8,7 +8,6 @@
 	--code-bg-color-dark: rgb(0, 0, 0, .3);
 	--inline-code-bg-color: rgba(175, 184, 193, 0.2);
 	--inline-code-bg-color-dark: rgba(0, 0, 0, .4);
-	/* --md-default-fg-color--light: red !important; */
 }
 
 /* Nav link accent color */
@@ -97,7 +96,7 @@ body[data-md-color-scheme='slate'] {
 }
 body[data-md-color-scheme='slate'] {
 	.md-typeset p code {
-		background-color: var(--inline-code-bg-color-dark);
+		background-color: var(--inline-code-bg-color-dark) !important;
 	}
 }
 
