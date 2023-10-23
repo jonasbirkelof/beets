@@ -31,11 +31,11 @@
 
 /* Headers */
 h1, h2, h3, h4, h5 {
-	color: #000 !important;
+	color: #000;
 }
 body[data-md-color-scheme='slate'] {
 	h1, h2, h3, h4, h5 {
-		color: #fff !important;
+		color: #fff;
 	}
 }
 
