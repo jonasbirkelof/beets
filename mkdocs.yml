@@ -23,12 +23,11 @@ theme:
         name: Switch to light mode
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - search.suggest
     - content.code.copy
     - navigation.top
-  icon:
-    repo: fontawesome/brands/github
 extra_css:
   - assets/stylesheets/custom.css
 nav:
@@ -75,6 +74,9 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - pymdownx.details
   - pymdownx.inlinehilite
@@ -85,5 +87,3 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
-repo_url: https://github.com/jonasbirkelof/beets
-repo_name: jonasbirkelof/beets
