@@ -31,9 +31,13 @@ theme:
 extra_css:
   - assets/stylesheets/custom.css
 nav:
-  - Home: index.md
+  - Home:
+    - Welcome: index.md
+    - Beets CSS: beets-css/index.md
+    - Beets Layout: beets-layout/index.md
+    - Beets PHP: beets-php/index.md
   - Beets CSS:
-    - Home: beets-css/index.md
+    - About: beets-css/index.md
     - Getting started: beets-css/getting-started.md
     - Download: https://github.com/jonasbirkelof/beets-css
     - Forms:
@@ -65,6 +69,7 @@ nav:
     - Om Beets PHP: beets-php/index.md
 plugins:
   - search
+  # - typeset
 markdown_extensions:
   - attr_list
   - md_in_html
