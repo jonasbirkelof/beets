@@ -67,6 +67,8 @@ nav:
       - Footer: beets-layout/section/footer.md
   - Beets PHP:
     - Om Beets PHP: beets-php/index.md
+    - Classes:
+      - App.php: beets-php/classes/App.md
 plugins:
   - search
 markdown_extensions:
@@ -85,7 +87,13 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+  - pymdownx.highlight:
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
   - pymdownx.critic
   - pymdownx.caret
   - pymdownx.keys
