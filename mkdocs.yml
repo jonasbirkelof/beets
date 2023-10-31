@@ -69,7 +69,6 @@ nav:
     - Om Beets PHP: beets-php/index.md
 plugins:
   - search
-  # - typeset
 markdown_extensions:
   - attr_list
   - md_in_html
