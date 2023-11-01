@@ -82,6 +82,16 @@ echo Session::get("name", "Error"); // Error
 
 To remove the value and key from the session you use the method [`flush()`](./classes/Session.md#flush) which you can read more about [below](#empty-the-session).
 
+## Check if a key exists in the session
+
+There is a practical method you can use if you just want to verify if a specific key exists in the session. Use the [`has()`](./classes/Session.md#has) method and insert the key as a parameter. The method will only return a boolean and it makes use of the `get()` method for checking, so this works with both custom session variables and flash messages.
+
+```php
+Session::put("myKey", "myValue");
+
+echo Session::has("myKey") ? "true" : "false"; // true
+```
+
 ## Empty the session
 
 You can empty the whole session by setting it to an empty array, or you can unset only a given key with the [`flush()`](./classes/Session.md#flush) method.
