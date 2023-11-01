@@ -7,7 +7,7 @@ theme:
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: blue grey
+      primary: black
       accent: orange
       scheme: default
       toggle:
@@ -67,8 +67,12 @@ nav:
       - Footer: beets-layout/section/footer.md
   - Beets PHP:
     - Om Beets PHP: beets-php/index.md
+    - Content:
+      - Sessions: beets-php/sessions.md
+      - User authentication: beets-php/user-authentication.md
     - Classes:
       - App.php: beets-php/classes/App.md
+      - Session.php: beets-php/classes/Session.md
 plugins:
   - search
 markdown_extensions:
