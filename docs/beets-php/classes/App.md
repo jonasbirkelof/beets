@@ -11,13 +11,13 @@ namespace App\Core;
 ## Dependencies
 
 ```php
-use: App\Core\Session;
+use App\Core\Session;
 ```
 
 ## Import the class
 
 ```php
-use: App\Core\App; // Import the App class
+use App\Core\App; // Import the App class
 ```
 
 ## Properties

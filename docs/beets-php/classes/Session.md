@@ -15,7 +15,7 @@ None.
 ## Import the class
 
 ```php
-use: App\Core\Session; // Import the Session class
+use App\Core\Session; // Import the Session class
 ```
 
 ## Properties
