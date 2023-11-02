@@ -129,7 +129,8 @@ echo App::message("Info message", "info");
 By calling the abort method, the code will set a response code (404 by default), show the abort page and then abort the code.
 
 ```php
-public static function abort($code = 400) {
+public static function abort($code = 400) 
+{
 	http_response_code($code);
 	require PUBLIC_ROOT . "views/errors/{$code}.php";
 	die();
@@ -155,7 +156,8 @@ Note that this method is dependent on the [`Session`](./Session.md) class as it 
 ```php
 use App\Core\Session;
 
-public static function error($message = null) {
+public static function error($message = null) 
+{
 	Session::flash('message', $message);
 		
 	http_response_code(200);

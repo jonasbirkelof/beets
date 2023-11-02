@@ -8,12 +8,12 @@ All session methods belong to the Session class in the file `~/app/core/Session.
 
 A flash message is used to temporarely show a message and then immediately delete it. A common use case is when you need to show an alert when a task was successful (or unsuccessful), like "The post has been created".
 
-With Beets PHP, the flash messages is automatically deleted (flushed) when the index page (~/public/index.php) has been loaded, right after the massage has been showed.
+With Beets PHP, the flash messages is automatically deleted (unflashed) when the index page (~/public/index.php) has been loaded, right after the massage has been showed.
 
 The flash messages is stored in the global session array with the key `_flash`, like this:
 
 ```php
-$_SESSION["_flash"][$key][$value];
+$_SESSION["_flash"][$key] = $value;
 ```
 
 ## Set a flash message
@@ -112,7 +112,5 @@ The [`destroy()`](./classes/Session.md#destroy) method will destroy the whole se
 The method is not returning anything (return type: void) and does not accept any parameters. To execute it, you just call it:
 
 ```php
-function logout() {
-	Session::destroy(); // Destroy the session
-}
+Session::destroy(); // Destroy the session
 ```
