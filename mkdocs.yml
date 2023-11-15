@@ -68,10 +68,19 @@ nav:
   - Beets PHP:
     - Om Beets PHP: beets-php/index.md
     - Content:
+      - Database: beets-php/database.md
+      - Redirecting: beets-php/redirecting.md
       - Sessions: beets-php/sessions.md
       - User authentication: beets-php/user-authentication.md
+    - Configuration:
+      - .env: beets-php/configuration/env.md
+      - app.php: beets-php/configuration/app.md
+      - data.php: beets-php/configuration/data.md
+      - dotenv.php: beets-php/configuration/dotenv.md
     - Classes:
       - App.php: beets-php/classes/App.md
+      - Database.php: beets-php/classes/Database.md
+      - Redirect.php: beets-php/classes/Redirect.md
       - Session.php: beets-php/classes/Session.md
 plugins:
   - search

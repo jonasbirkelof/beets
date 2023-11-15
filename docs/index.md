@@ -13,34 +13,40 @@ As a PHP developer I found myself creating the same tools, login scripts and cla
 
 This project is always growing and developing. Right now my primary focus is on Beets PHP, but please feel free to use every part of this project and give feedback on GitHub!
 
-<div class="row">
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-sm markdown">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+    <div class="col">
+        <div class="card h-100 shadow-sm markdown">
             <div class="card-body text-center">
-                <img src="assets/images/beetscss_col_100x416.png#only-light" class="border-0" style="max-height: 90px;">
-                <img src="assets/images/beetscss_col_inv_100x416.png#only-dark" class="border-0" style="max-height: 90px;">
+                <a href="/beets-css">
+                    <img src="assets/images/beetscss_col_100x416.png#only-light" class="border-0" style="max-height: 90px;">
+                    <img src="assets/images/beetscss_col_inv_100x416.png#only-dark" class="border-0" style="max-height: 90px;">
+                </a>
                 <br>
                 <i class="fa-brands fa-github"></i>
                 <a href="https://github.com/jonasbirkelof/beets-css">GitHub</a>
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-sm markdown">
+    <div class="col">
+        <div class="card h-100 shadow-sm markdown">
             <div class="card-body text-center">
-                <img src="assets/images/beetslayout_col_100x480.png#only-light" class="border-0" style="max-height: 90px;">
-                <img src="assets/images/beetslayout_col_inv_100x480.png#only-dark" class="border-0" style="max-height: 90px;">
+                <a href="/beets-layout">
+                    <img src="assets/images/beetslayout_col_100x480.png#only-light" class="border-0" style="max-height: 90px;">
+                    <img src="assets/images/beetslayout_col_inv_100x480.png#only-dark" class="border-0" style="max-height: 90px;">
+                </a>
                 <br>
                 <i class="fa-brands fa-github"></i>
                 <a href="https://github.com/jonasbirkelof/beets-layout">GitHub</a>
             </div>
         </div>
     </div>
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card shadow-sm markdown">
+    <div class="col">
+        <div class="card h-100 shadow-sm markdown">
             <div class="card-body text-center">
-                <img src="assets/images/beetsphp_col_100x421.png#only-light" class="border-0" style="max-height: 90px;">
-                <img src="assets/images/beetsphp_col_inv_100x421.png#only-dark" class="border-0" style="max-height: 90px;">
+                <a href="/beets-php">
+                    <img src="assets/images/beetsphp_col_100x421.png#only-light" class="border-0" style="max-height: 90px;">
+                    <img src="assets/images/beetsphp_col_inv_100x421.png#only-dark" class="border-0" style="max-height: 90px;">
+                </a>
                 <br>
                 <i class="fa-brands fa-github"></i>
                 <a href="https://github.com/jonasbirkelof/beets-php">GitHub</a>

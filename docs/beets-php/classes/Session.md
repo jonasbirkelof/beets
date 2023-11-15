@@ -2,21 +2,27 @@
 
 This class contains methods for setting, getting and resetting global session variables and flash messages, as well as destroying the session completely.
 
+## Location
+
+```php
+~/app/core/
+```
+
 ## Namespace
 
 ```php
 namespace App\Core;
 ```
 
-## Dependencies
-
-None.
-
 ## Import the class
 
 ```php
 use App\Core\Session; // Import the Session class
 ```
+
+## Dependencies
+
+None.
 
 ## Properties
 
@@ -32,6 +38,7 @@ public static function has($key): bool
 	return (bool) static::get($key);
 }
 ```
+
 ### put()
 
 ```php
@@ -40,6 +47,7 @@ public static function put($key, $value)
 	$_SESSION[$key] = $value;
 }
 ```
+
 ### get()
 
 ```php
@@ -48,6 +56,7 @@ public static function get($key, $default = null): mixed
 	return $_SESSION['_flash'][$key] ?? $_SESSION[$key] ?? $default;
 }
 ```
+
 ### flash()
 
 ```php
@@ -56,6 +65,7 @@ public static function flash($key, $value): void
 	$_SESSION['_flash'][$key] = $value;
 }
 ```
+
 ### unflash()
 
 ```php

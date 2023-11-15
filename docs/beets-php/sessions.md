@@ -38,6 +38,8 @@ echo Session::get("message"); // This is a flash message!
 
 The `get()` method recieves two parameters, the key and the optional fallback value. The method will first check if the given key exists in the _flash array (`$_SESSION[_flash][$key]`). Then, if the key does not exists in the _flash array, it will check in the global session (`$_SESSION[$key]`). If the key exists i neither of these arrays, the method will return the fallback value which is `null` by default. 
 
+This might be useful if the message is dependent on user input.
+
 The code below will demonstrate what will happen if the given key does not exist in the session.
 
 ```php

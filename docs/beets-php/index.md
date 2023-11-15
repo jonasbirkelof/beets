@@ -1,17 +1,7 @@
-# Beets PHP
+# ![Image title](../assets/images/beetsphp_col_inv_100x421.png#only-dark) ![Image title](../assets/images/beetsphp_col_100x421.png#only-light)
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Beets PHP is a starter template for semi-advanced PHP projects containing an MVC filesystem, routing, autoloader, .env functionality, SCSS compiler, Browser-sync and more. It makes use of other great libraries for the core functionality so make sure you check them out, say thanks and cunsult their documentation!
 
-## Commands 1
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- [Bramus Router](https://github.com/bramus/router)
+- [vlucas PHP dotenv](https://github.com/vlucas/phpdotenv)
+- [BrowserSync](https://browsersync.io/docs)

@@ -170,6 +170,17 @@ table code {
 
 /*
 *
+* Bootstrap mods
+*
+*/
+
+body[data-md-color-scheme='slate'] .card {
+	border-color: var(--border-color-dark);
+	background-color: transparent !important;
+}
+
+/*
+*
 * Beets CSS Demo section
 *
 */

@@ -8,16 +8,16 @@ This class contains basic methods that can be used throughout the application.
 namespace App\Core;
 ```
 
-## Dependencies
-
-```php
-use App\Core\Session;
-```
-
 ## Import the class
 
 ```php
 use App\Core\App; // Import the App class
+```
+
+## Dependencies
+
+```php
+use App\Core\Session; // Import the Session class
 ```
 
 ## Properties
