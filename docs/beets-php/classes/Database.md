@@ -5,7 +5,7 @@ This class contains methods for accessing data in your database. See the [databa
 ## Location
 
 ```php
-~/app/core/
+~/app/core/Database.php
 ```
 
 ## Namespace
@@ -45,9 +45,9 @@ public static $order;
 ### query()
 
 ```php
-public function query(string $query, array $params = [])
+public static function query(string $query, array $params = [])
 {
-	$stmt = $this->connection->prepare($query);
+	$stmt = (new static)->connection->prepare($query);
 	$stmt->execute($params);
 
 	return $stmt;

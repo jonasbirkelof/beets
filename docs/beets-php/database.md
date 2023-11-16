@@ -1,5 +1,3 @@
-# Database
-
 Beets PHP contains several tools for you to easily work with your database. On this page you will learn how to setup and connect to the tadabase ase well as basic CRUD functionallity.
 
 ## Configure the connection
@@ -25,7 +23,7 @@ By importing [`Database.php`](./classes/Database.md) with `use App\Core\Database
 ```php
 use App\Core\Database as DB;
 
-$db = new DB();
+DB::query($sql)->fetchAll();
 ```
 
 ## Database methods
@@ -38,13 +36,13 @@ The `query()` method will combine your SQL query with the attributes for your pr
 
 ```php
 $sql = "SELECT * FROM users";
-$result = $db->query($sql);
+$result = DB::query($sql)->fetchAll();
 
 $sql = "INSERT INTO users (first_name, last_name) VALUES (?, ?)"
-$result = $db->query($sql, ['Jim', 'Halpert']);
+$result = DB::query($sql, ['Jim', 'Halpert']);
 
 $sql = "INSERT INTO users (first_name, last_name) VALUES (:first, :last)"
-$result = $db->query($sql, ['first' => 'Jim', 'last' => 'Halpert']);
+$result = DB::query($sql, ['first' => 'Jim', 'last' => 'Halpert']);
 ```
 
 ### where()
@@ -104,13 +102,13 @@ It is by using this approach the `where()` and `orderBy()` methods comes in hand
 ```php
 use App\Core\Database as DB;
 
-$db = new App\Core\Database();
-$result = $db->query("SELECT * FROM table")->fetchAll();
+$sql = "SELECT * FROM table";
+$result = DB::query($sql)->fetchAll();
 ```
 
 Here we will get the names of all users in the users table with the status of 1 and order them by their first name. The query will use the PDO method `fetchAll()` to genereate an array of results.
 
-```php title="~/app/http/controllers/UserController.php"
+```php title="UserController.php"
 namespace App\Http\Controllers;
 
 use App\Core\App;
@@ -134,7 +132,7 @@ class UserController
 }
 ```
 
-```php title="~/app/models/User.php"
+```php title="User.php"
 namespace App\Models;
 
 use App\Core\Database as DB;
@@ -147,18 +145,16 @@ class User
 		$orderClause = DB::orderBy(! empty($args['orderBy']) ? $args['orderBy'] : []);
 		$whereClause = DB::where(! empty($args['where']) ? $args['where'] : []);
 
-		$db = new DB();
 		$sql = "SELECT first_name, last_name FROM users $whereClause $orderClause";
-		
 		// Execute the query and store the result in $result
-		$result = $db->query($sql)->fetchAll();
+		$result = DB::query($sql)->fetchAll();
 
 		return $result ?: [];
 	}
 }
 ```
 
-```php title="~/public/views/users/index.php"
+```php title="index.php"
 // print the array with the users data
 print_r($users);
 ```
@@ -168,15 +164,16 @@ print_r($users);
 ```php
 use App\Core\Database as DB;
 
-$db = new App\Core\Database();
-$result = $db->query("SELECT * FROM table")->fetch();
+$sql = "SELECT * FROM table WHERE id = ?";
+$params = [$userId];
+$result = DB::query($sql, $params)->fetch();
 ```
 
 Here we will get the names of all users in the users table with the status of 1 and order them by their first name. The query will use the PDO method `fetch()` to get a single item as an array.
 
 We will use a User method called `findOrFail()` that will return a 404 error page if the database doesn't return a result, like if a faulty user id was put in the URL. If you do not want to abort if there is no result, you can just use the `find()` method.
 
-```php title="~/app/http/controllers/UserController.php"
+```php title="UserController.php"
 namespace App\Http\Controllers;
 
 use App\Core\App;
@@ -197,7 +194,7 @@ class UserController
 }
 ```
 
-```php title="~/app/models/User.php"
+```php title="User.php"
 namespace App\Models;
 
 use App\Core\App;
@@ -207,11 +204,9 @@ class User
 {
 	public static function find(int $id): array
 	{
-		$db = new DB();
-		$sql = "SELECT first_name, last_name FROM users WHERE id = :id";
-
-		// Execute the query and store the result in $result
-		$result = $db->query($sql, ['id' => $id])->fetch();
+		$sql = "SELECT first_name, last_name FROM users WHERE id = :id";		
+		// Execute and store the result in $result
+		$result = DB::query($sql, ['id' => $id])->fetch();
 
 		return $result ?: [];
 	}
@@ -229,7 +224,7 @@ class User
 }
 ```
 
-```php title="~/public/views/users/show.php"
+```php title="show.php"
 // print the array with the user data
 print_r($users);
 ```
@@ -239,16 +234,15 @@ print_r($users);
 ```php
 use App\Core\Databas as DB;
 
-$db = new DB();
 $sql = "INSERT INTO table (col_1, col_2) VALUES (?, ?)";
-$result = $db->query($sql, ['foo', 'bar']);
+$result = DB::query($sql, ['foo', 'bar']);
 ```
 
 Here we will add a new user to the users table. The values for `firstName` and `lastName` is assumed to come from a form and as retrieved from the `$_POST` super global. 
 
 Please note that we are not covering the validation functionality in this example. The validation errors and input values are stored as flash messages to be used in case of errors to show what part of the validation failed.
 
-```php title="~/app/http/controllers/UserController.php"
+```php title="UserController.php"
 namespace App\Http\Controllers;
 
 use App\Core\Redirect;
@@ -271,7 +265,7 @@ class UserController
 }
 ```
 
-```php title="~/app/models/User.php"
+```php title="User.php"
 namespace App\Models;
 
 use App\Http\Form;
@@ -293,11 +287,9 @@ class User
 
 		// Store the data if there are no errors
 		if (! $Form->errors()) {
-			$db = new DB();
 			$sql = "INSERT INTO users (first_name, last_name) VALUES (:firstName, :lastName)";
-
-			// Execute the query
-			$db->query($sql, [
+			// Execute
+			DB::query($sql, [
 				'firstName' => $firstName,
 				'lastName' => $lastName
 			]);
@@ -321,16 +313,15 @@ class User
 ```php
 use App\Core\Databas as DB;
 
-$db = new DB();
 $sql = "UPDATE table SET col_1 = ?, col_2 = ? WHERE id = ?";
-$result = $db->query($sql, ['foo', 'bar', 123]);
+$result = DB::query($sql, ['foo', 'bar', 123]);
 ```
 
 Here we will update the user with id of `$userId` in the users table. The values for `firstName` and `lastName` is assumed to come from a form and as retrieved from the `$_POST` super global. The `$userId` comes from the router file.
 
 Please note that we are not covering the validation functionality in this example. The validation errors and input values are stored as flash messages to be used in case of errors to show what part of the validation failed.
 
-```php title="~/app/http/controllers/UserController.php"
+```php title="UserController.php"
 namespace App\Http\Controllers;
 
 use App\Core\Redirect;
@@ -353,7 +344,7 @@ class UserController
 }
 ```
 
-```php title="~/app/models/User.php"
+```php title="User.php"
 namespace App\Models;
 
 use App\Http\Form;
@@ -375,11 +366,9 @@ class User
 
 		// Store the data if there are no errors
 		if (! $Form->errors()) {
-			$db = new DB();
 			$sql = "UPDATE users  SET first_name = :firstName, last_name = :lastName WHERE id = :id";
-
-			// Execute the query
-			$db->query($sql, [
+			// Execute
+			DB::query($sql, [
 				'firstName' => $firstName,
 				'lastName' => $lastName,
 				'id' => $userId
@@ -404,14 +393,13 @@ class User
 ```php
 use App\Core\Databas as DB;
 
-$db = new DB();
 $sql = "DELETE FROM table WHERE id = ?";
-$result = $db->query($sql, [123]);
+$result = DB::query($sql, [123]);
 ```
 
 Here we will delete the user with id of `$userId` from the users table. The `$userId` comes from the router file.
 
-```php title="~/app/http/controllers/UserController.php"
+```php title="UserController.php"
 namespace App\Http\Controllers;
 
 use App\Core\Redirect;
@@ -430,7 +418,7 @@ class UserController
 }
 ```
 
-```php title="~/app/models/User.php"
+```php title="User.php"
 namespace App\Models;
 
 use App\Core\Database as DB;
@@ -439,11 +427,9 @@ class User
 {
 	public static function destroy(int $userId): bool
 	{
-		$db = new DB();
 		$sql = "DELETE FROM " . static::DB_TABLE . " WHERE id = :id";
-
-		// Execute the query
-		$db->query($sql, ['id' => $userId]);
+		// Execute
+		DB::query($sql, ['id' => $userId]);
 
 		return true;
 	}

@@ -2,6 +2,12 @@
 
 This class contains basic methods that can be used throughout the application.
 
+## Location
+
+```php
+~/app/core/App.php
+```
+
 ## Namespace
 
 ```php

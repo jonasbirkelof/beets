@@ -5,7 +5,7 @@ This class contains methods for redirecting a user with the possibility to pass 
 ## Location
 
 ```php
-~/app/core/
+~/app/core/Redirect.php
 ```
 
 ## Namespace
@@ -27,8 +27,6 @@ use App\Core\Session; // Import the Session class
 ```
 
 ## Properties
-
-### $targetPath
 
 ```php
 private static $targetPath;

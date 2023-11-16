@@ -5,7 +5,7 @@ This class contains methods for setting, getting and resetting global session va
 ## Location
 
 ```php
-~/app/core/
+~/app/core/Session.php
 ```
 
 ## Namespace

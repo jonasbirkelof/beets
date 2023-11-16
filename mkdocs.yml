@@ -68,7 +68,11 @@ nav:
   - Beets PHP:
     - Om Beets PHP: beets-php/index.md
     - Content:
-      - Database: beets-php/database.md
+      - Database workflow: beets-php/database.md
+      - Form validation: beets-php/form-validation.md
+      - Functions:
+        - App functions: beets-php/app-functions.md
+        - Custom functions: beets-php/custom-functions.md
       - Redirecting: beets-php/redirecting.md
       - Sessions: beets-php/sessions.md
       - User authentication: beets-php/user-authentication.md
@@ -80,6 +84,7 @@ nav:
     - Classes:
       - App.php: beets-php/classes/App.md
       - Database.php: beets-php/classes/Database.md
+      - Form.php: beets-php/classes/Form.md
       - Redirect.php: beets-php/classes/Redirect.md
       - Session.php: beets-php/classes/Session.md
 plugins:
