@@ -136,19 +136,19 @@ You can check if the value of an input is already stored in the database. A comm
 You add the `unique()` method to your validation and pass the table name and column name that should be checked.
 
 ```php
-$Form->validate('input', $input)->unique("users_table", "email");
+$Form->validate('input', $input)->unique("email", "users_table");
 ```
 
 You have the option to pass a row ID that should be ignored. Let's say the logged in user is updating their personal info. Then their email is already in the database when the validation class checks and would return an error message. If you pass the logged in user ID, the function will just skip that row when checking emails.
 
 ```php
-$Form->validate('input', $input)->unique("users_table", "email", $userId);
+$Form->validate('input', $input)->unique("email", "users_table", $userId);
 ```
 
 You can provide a custom error message (optional). If no one is provided, the default message will be used.
 
 ```php
-$Form->validate('input', $input)->unique("users_table", "email", , "my error message");
+$Form->validate('input', $input)->unique("email", "users_table", , "my error message");
 ```
 
 ### Matching values
