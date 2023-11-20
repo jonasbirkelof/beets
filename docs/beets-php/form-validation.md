@@ -52,8 +52,6 @@ The `validate()` method is used to set the `$field` and `$value` properties.
 - `$field` is used when generating an error message so that you can assign the correct error message to the corresponding form input. 
 - `$value` is stored so that the cascading methods like `required()`, `name()` and others can use it to validate it.
 
-In the example below the field `input_name` is submitted empty and an error message is genereated in the `errors` array.
-
 ```html
 <form>
 	<input type="text" name="input_name" value="">
@@ -77,7 +75,7 @@ public function isFilled(): bool
 
 Check if an input has been filled out. This method takes no arguments and returns a boolean.
 
-The method checks if the value is empty (""), null or the lenght is 0 and returns `false` if any. The lenght check uses the `trim()` function so blank spaces does not count as characters. An input containing only blank spaces is considered empty.
+The method checks if the value is **empty ("")**, **null** or the **lenght is 0** and returns `false` if any. Blank spaces does not count as characters. An input containing only blank spaces is considered empty.
 
 While you CAN use this method, it's important to know that it does not return an error message.
 
@@ -109,10 +107,16 @@ The `required()` method uses the `isFilled()` method to check if the input has b
 $Form->validate('input_1', $input1)->required();
 ```
 
-You can provide a custom error message (optional). If no one is provided, the default message will be used.
+#### Error message
 
 ```php
-$Form->validate('input_2', $input2)->required("My error message");
+["required"] => "The field is required"
+```
+
+You can provide a custom error message:
+
+```php
+$Form->validate('input_2', $input2)->required("Custom message");
 ```
 
 ### Unique value in db
@@ -133,28 +137,62 @@ public function unique(
 
 You can check if the value of an input is already stored in the database. A common example is to check if an email address already exists in the database. In that case, the user already has an account on your site.
 
-You add the `unique()` method to your validation and pass the table name and column name that should be checked.
+You add the `unique()` method to your validation and pass the column and table that should be checked in the database.
 
 ```php
-$Form->validate('input', $input)->unique("email", "users_table");
+$Form->validate('email', $email)->unique("email", "users_table");
 ```
+
+#### Ignore row ID
 
 You have the option to pass a row ID that should be ignored. Let's say the logged in user is updating their personal info. Then their email is already in the database when the validation class checks and would return an error message. If you pass the logged in user ID, the function will just skip that row when checking emails.
 
 ```php
-$Form->validate('input', $input)->unique("email", "users_table", $userId);
+$Form->validate('email', $email)->unique("email", "users_table", $userId);
 ```
 
-You can provide a custom error message (optional). If no one is provided, the default message will be used.
+#### Error message
 
 ```php
-$Form->validate('input', $input)->unique("email", "users_table", , "my error message");
+["unique"] => "The value already exists"
+```
+
+You can provide a custom error message:
+
+```php
+$Form->validate('input', $input)->unique("email", "users_table", , "Custom message");
 ```
 
 ### Matching values
 
 ```php
+private const MATCHING = "The values doesn't match";
 
+public function matching($matchingValue, $errorMessage = self::MATCHING): object
+{
+	...
+}
+```
+
+You can check if the `$value` matches another value given as `$matchingValue` in the `matching()` method. If not, an error messagage will be generated.
+
+```php
+$pass = "mypassword123";
+$pass_conf = "mypass987";
+
+$Form->validate('input_pass', $pass)->matching($pass_conf); // Does not match
+```
+
+#### Error message
+
+```php
+["matching"] => "The values doesn't match"
+```
+
+You can provide a custom error message:
+
+```php
+$Form->validate('input_pass', $pass)->matching($pass_conf, "Custom message");
 ```
 
 ### Name

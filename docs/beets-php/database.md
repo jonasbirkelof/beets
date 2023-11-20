@@ -226,7 +226,7 @@ class User
 
 ```php title="show.php"
 // print the array with the user data
-print_r($users);
+print_r($user);
 ```
 
 ### Add post to db

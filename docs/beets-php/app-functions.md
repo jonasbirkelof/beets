@@ -1,6 +1,6 @@
 The app functions are functions that comes natively with Beets PHP. The file is located in the `~/app/core/` folder and is loaded automatically via the autoloader.
 
-The `/includes` folder is used for lager function or functions that belong together but deos not need to be in a class.
+The `/includes` folder is used for lager functions or functions that belong together but does not need to be in a class.
 
 ```php title="~/app/core/functions.php"
 // Die-and-dump function

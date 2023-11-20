@@ -53,6 +53,9 @@ body[data-md-color-scheme='slate'] {
 }
 
 /* Code blocks */
+body .highlight code {
+	font-size: 13px !important;
+}
 .highlight th.filename,
 .highlight span.filename {
 	border-top-left-radius: var(--border-radius) !important;
