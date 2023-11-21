@@ -91,6 +91,7 @@ plugins:
   - search
 markdown_extensions:
   - attr_list
+  - def_list
   - md_in_html
   - pymdownx.highlight:
       anchor_linenums: true
