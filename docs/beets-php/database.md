@@ -1,5 +1,19 @@
 Beets PHP contains several tools for you to easily work with your database. On this page you will learn how to setup and connect to the tadabase ase well as basic CRUD functionallity.
 
+## Database.php
+
+```php title="Location"
+~/app/core/Database.php
+```
+
+```php title="Namespace"
+namespace App\Core;
+```
+
+```php title="Import"
+use App\Core\Database as DB;
+```
+
 ## Configure the connection
 
 To be able to connect to the datbase you will have to add your credentials to the [.env](./configuration/env.md) file. You will get this information from your hosting service. 
@@ -18,7 +32,7 @@ DB_PASSWORD=
 
 ## Connect to the database
 
-By importing [`Database.php`](./classes/Database.md) with `use App\Core\Database` you get access to all database functionality. The connection is initiated in the `__construct()` which retrieves the credentials from the [.env](./configuration/env.md) file and uses them to set up a new PDO object.
+By importing Database.php with `use App\Core\Database` you get access to all database functionality. The connection is initiated in the `__construct()` which retrieves the credentials from the [.env](./configuration/env.md) file and uses them to set up a new PDO object.
 
 ```php
 use App\Core\Database as DB;

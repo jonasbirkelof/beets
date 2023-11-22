@@ -1,4 +1,4 @@
-If you want to add our own custom functions yo can use the file `functions.php` that is located in the `~/app/helpers/` folder. We separate the core app functions and the custom user functions for safety reasons.
+If you want to add our own custom functions you can use the file `functions.php` that is located in the `~/app/helpers/` folder. We separate the core app functions and the custom user functions for safety reasons.
 
 This file is automatically included via the autoloader.
 

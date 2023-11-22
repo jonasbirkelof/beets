@@ -69,6 +69,7 @@ nav:
     - Om Beets PHP: beets-php/index.md
     - Content:
       - Database workflow: beets-php/database.md
+      - Error messages: beets-php/error-messages.md
       - Form validation: beets-php/form-validation.md
       - Functions:
         - App functions: beets-php/app-functions.md
@@ -81,12 +82,6 @@ nav:
       - app.php: beets-php/configuration/app.md
       - data.php: beets-php/configuration/data.md
       - dotenv.php: beets-php/configuration/dotenv.md
-    - Classes:
-      - App.php: beets-php/classes/App.md
-      - Database.php: beets-php/classes/Database.md
-      - Form.php: beets-php/classes/Form.md
-      - Redirect.php: beets-php/classes/Redirect.md
-      - Session.php: beets-php/classes/Session.md
 plugins:
   - search
 markdown_extensions:

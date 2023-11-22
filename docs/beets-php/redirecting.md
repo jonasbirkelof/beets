@@ -2,7 +2,19 @@
 
 With Beets PHP you get a convenient way to redirect the user to a different page using the Redirect class. This is a simple but effective class.
 
-All redirecting methods belong to the Redirect class in the file `~/app/core/Redirect.php`. For details, please se the [Redirect.php](./classes/Redirect.md) page.
+## Redirect.php
+
+```php title="Location"
+~/app/core/Redirect.php
+```
+
+```php title="Namespace"
+namespace App\Core;
+```
+
+```php title="Import"
+use App\Core\Redirect;
+```
 
 ## How to redirect
 

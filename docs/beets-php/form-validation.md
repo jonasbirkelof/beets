@@ -1,4 +1,18 @@
-Beets PHP has a class with methods for form validation. Access them by importing the [`Form.php`](./classes/Form.md) class.
+Beets PHP has a class with methods for form validation. Access them by importing the Form.php class.
+
+## Form.php
+
+```php title="Location"
+~/app/core/Form.php
+```
+
+```php title="Namespace"
+namespace App\Core;
+```
+
+```php title="Import"
+use App\Core\Form;
+```
 
 ## How validation works
 
@@ -32,9 +46,11 @@ if (! $Form->errors()) {
 	$result = DB::query($sql, [$name, $email]);
 
 	Redirect::to('path');
+
 } else {
-	// Flash errors and old values
-	Session::flash('errors', $Form->errors());
+	// Flash errors and old values to the session
+	$Form->flashErrors();
+
 	Session::flash('old', [
 		'name' => $name,
 		'email' => $email
@@ -51,21 +67,19 @@ if (! $Form->errors()) {
 The `validate()` method sets the `$field` and `$value` properties that are used with the validation methods as well as storing the value length as `$valueLength`.
 
 ```php title="validate()"
+private $field;
+private $value;
+private $valueLength;
+
 public function validate(string $field, $value): object
 {
-	$this->field = $field;
-	$this->value = $value;
-	$this->valueLength = mb_strlen($value);
-
-	return $this;
+	...
 }
 ```
 
 - `$field` is used when generating an error message so that you can assign the correct error message to the corresponding form input. 
 - `$value` is stored so that the cascading methods like `required()`, `name()` and others can use it to validate it.
 - `$valueLength` is the length of `$value` ("hello" = 5).
-
-All of these properties are private.
 
 ```html title="Example"
 <form>
@@ -79,86 +93,58 @@ $input = escape($_POST['input_field']); // ""
 
 $Form = new Form();
 
-$Form->validate('input_field', $input)->required(); // Fail and generate an error
+$Form->validate('input_field', $input)->required();
+
+// Fail (input_filed is required but $input is empty)
 ```
 
 ## Error messages
 
-When a validation fails, an error message is created ([`error()`](#error)) and placed in an array ([`errors()`](#errors)) so that the user can get feedback on what data was not submitted correctly.
+When a validation fails, an error message is created using the Error class. The error message is put in an array and can be accessed so that the user can get feedback on what data was not submitted correctly.
 
-### errors()
+More details can be found on the [Error messages](./error-messages.md) page.
+
+### Errors
 
 Returns the array that holds the error messages.
 
 ```php
-public function errors(string $field = null): array
+public function errors(string $label): mixed
 {
-	return $field ? $this->errors[$field] : $this->errors;
+	...
 }
 ```
 
 ```php title="Example"
+$Form->validate('input_field', "")->required();
+
 print_r($Form->errors());
 
-// Result:
-array (
-	["input_field"] => array(
+// Output:
+[
+	["input_field"] => [
 		["required"] => "The field is required"
-	)
-)
-```
-```php title="Example"
-print_r($Form->errors('input_field'));
-
-// Result:
-array (
-	["required"] => "The field is required"
-)
-```
-```php title="Example"
-echo $Form->errors('input_field')['required']; 
-
-// Result:
-The field is required
+	]
+]
 ```
 
-The array can hold many input field's messages, but each input field can only hold the latest validadion error. 
+The array can hold many labels ("input_field"), but each label can only hold the latest validadion error. 
 
-Example: if you validate a field that can only be alpha characters and max 10 characters long, but is submitted 20 characters long and containing characters like "&!#", tehn only the last check will be stored. If that was the length error, the characters error will be shown if the length is shortened.
+Example: if you validate a field that can only be alpha characters and max 10 characters long, but is submitted 20 characters long and containing characters like "&!#", then only the last check will be stored. If that was the length error, the characters error will be shown if the length is shortened.
 
-### error()
+### Flash errors
 
-This method puts a new error message into the [`errors()`](#errors) array.
+The Form class has a method for flashing the error messages to the session, like a shortcut for `Session::flash()`.
 
 ```php
-public function error(string $validationLabel, string $field, $message): void
+public function flashErrors(): void
 {
-	$this->errors[$field] = [$validationLabel => $message];
+	...
 }
 ```
 
-- `$validationLabel` is the name of the validation that was performed.
-- `$field` is the name of the field that was validated.
-- `$message` is the message that should be displayed.
-
 ```php title="Example"
-public function required()
-{
-	if (! $this->isFilled()) {
-		$this->error('required', $this->field, "The field is required");
-	}
-
-	return $this;
-}
-```
-```php title="Example"
-$input = escape($_POST['input_field']) // Empty field: ""
-
-$Form = new Form();
-
-$Form->validate('input_field', $input)->required(); // Fail
-
-echo $Form->errors('input_field')['required']; // The field is required
+$Form->flashErrors();
 ```
 
 ## Validation methods
@@ -200,14 +186,10 @@ $Form->validate("input_field", "Darryl")->alpha();
 // Pass
 ```
 
-```title="Default error message"
-The field can only contain alphabetic characters (a-z, A-Z)
-```
-
 ```php title="Parameters"
-$Form->validate('input_field', $input)->alpha([
-	'error' => "Custom error message"
-]);
+[
+	'error' => "Only alphabetic characters (a-z, A-Z) allowed" // (string)
+]
 ```
 
 ### Alpha Numeric
@@ -227,13 +209,9 @@ $Form->validate("input_field", "Nice69")->alphaNumeric();
 // Pass
 ```
 
-```title="Default error message"
-The field can only contain alphanumeric characters (a-z, A-Z, 0-9)
-```
-
 ```php title="Parameters"
 [
-	'error' => "Custom error message"
+	'error' => "Only alphanumeric characters (a-z, A-Z, 0-9) allowed" // (string)
 ]
 ```
 
@@ -264,13 +242,9 @@ $Form->validate('input_email', "example.com")->email();
 // Fail
 ```
 
-```title="Default error message"
-Invalid email format
-```
-
 ```php title="Parameters"
 [
-	'error' => "Custom error message"
+	'error' => "Invalid email format" // (string)
 ]
 ```
 
@@ -315,19 +289,33 @@ public function length(int $minLength, int $maxLength, array $params = []): obje
 
 The `length()` method uses the [`lengthMin()`](#lengthmin) and [`lengthMax()`](#lengthmax) methods for the calculations.
 
-```php title="Example"
-$Form->validate("input_field", "Doughnut")->length(5, 10); // length = 8
+You can set parameter `'allowEmpty' => true` if you want the value to be either empty or between an interval. Suitable for fields that are not required but needs limitations if filled.
 
-// Pass
-```
-
-You can set the error messages for the min and max values respectively. If you donä, the default values for [`lengthMin()`](#lengthmin) and [`lengthMax()`](#lengthmax) will be used
+You can set an error message with the `error` parameter. This message will be used regardless if the value is too small or to large. You can also set the error messages for the min and max values respectively with `errorMin` and `errorMax`. If you don't set any error message, the default values for [`lengthMin()`](#lengthmin) and [`lengthMax()`](#lengthmax) will be used.
 
 ```php title="Parameters"
 [
-	'errorMin' => "Custom error message",
-	'errorMax' => "Custom error message"
+	'allowEmpty' => false // (bool)
+	'error' => null // (string)
+	'errorMin' => null // (string) null = set in lengthMin()
+	'errorMax' => null // (string) null = set in lengthMax()
 ]
+```
+
+```php title="Example"
+$Form->validate("input_field", "Doughnut")->length(5, 10);
+
+// Pass
+
+$Form->validate("input_field", "")->length(5, 10);
+
+// Fail (the length is 0 but needs to be at least 5)
+
+$Form->validate("input_field", "")->length(5, 10, [
+	'allowEmpty' => true
+]);
+
+// Pass (the length is allowed to be 0 OR minimum 5)
 ```
 
 ### Length Max
@@ -341,20 +329,16 @@ public function lengthMax(int $maxLength, array $params = []): object
 }
 ```
 
+```php title="Parameters"
+[
+	'error' => "Too few characters" // (string)
+]
+```
+
 ```php title="Example"
 $Form->validate("input_field", "Big Tuna")->lengthMax(10); // length = 8
 
 // Pass
-```
-
-```title="Default error message"
-Too few characters
-```
-
-```php title="Parameters"
-[
-	'error' => "Custom error message"
-]
 ```
 
 ### Length Min
@@ -368,20 +352,16 @@ public function lengthMin(int $minLength, array $params = []): object
 }
 ```
 
+```php title="Parameters"
+[
+	'error' => "Too few characters" // (string)
+]
+```
+
 ```php title="Example"
 $Form->validate("input_field", "Hi!")->lengthMin(5); // length = 3
 
 // Fail
-```
-
-```title="Default error message"
-Too few characters
-```
-
-```php title="Parameters"
-[
-	'error' => "Custom error message"
-]
 ```
 
 ### Matching
@@ -397,6 +377,12 @@ public function matching($matchingValue, array $params = []): object
 
 If the values does not match (`$x !== $y`) an error message is created. One example is comparing a password and password confirmation.
 
+```php title="Parameters"
+[
+	'error' => "The values doesn't match" // (string)
+]
+```
+
 ```php title="Example"
 $password = "pass111";
 $password_conf = "word999";
@@ -404,16 +390,6 @@ $password_conf = "word999";
 $Form->validate("input_password", $password)->matching($password_conf);
 
 // Fail
-```
-
-```title="Default error message"
-The values doesn't match
-```
-
-```php title="Parameters"
-[
-	'error' => "Custom error message"
-]
 ```
 
 ### Name
@@ -429,28 +405,34 @@ public function name(array $params = []): object
 
 This method will check if `$value` has the correct length and characters. It can only contain alphabetic unicode characters, spaces and hyphens (-). If it contains any other character or number, the validation will fail.
 
+To limit the length of the name you use the `min` and `max` parameters. You can not use the [`lengthMin()`](#lengthmin), [`lengthMax()`](#lengthmax) or [`length()`](#length) methods with this method.
+
+If you want the name field to be able to be empty when not `required()`, you must set parameter `'min' => 0` since the default minimum length of a name is 1 character.
+
+```php title="Parameters"
+[
+	'error' => "Invalid name format" // (string)
+	'max' => 64 // (int)
+	'min' => 1 // (int)
+]
+```
+
 ```php title="Example"
 $Form->validate('input_name', "Michael Scott")->name();
 
 // Pass
 
-$Form->validate('input_name', "Mich@e1 $c0tt")->name();
+$Form->validate('input_name', "Michael Scott")->name(['max' => 5]);
 
-// Fail
-```
+// Fail (name can be max 5 characters)
 
-```title="Default error message"
-Invalid name format
-```
+$Form->validate('input_name', "")->name();
 
-To limit the length of the name you use the `min` and `max` parameters. You can not use the [`lengthMin()`](#lengthmin), [`lengthMax()`](#lengthmax) or [`length()`](#length) methods with this method.
+// Fail (name is empty, must be 1-50 characters by default)
 
-```php title="Parameters"
-[
-	'min' => 10, // default: 1
-	'max' => 30, // default: 50
-	'error' => "Custom error message"
-]
+$Form->validate('input_name', "")->name(['allowEmpty' => true]);
+
+// Pass (name is allowed to be empty)
 ```
 
 ### Numeric
@@ -464,20 +446,16 @@ public function numeric(array $params = []): object
 }
 ```
 
+```php title="Parameters"
+[
+	'error' => "Only numeric characters (0-9) allowed" // (string)
+]
+```
+
 ```php title="Example"
 $Form->validate("input_field", 69)->numeric();
 
 // Pass (nice)
-```
-
-```title="Default error message"
-The field can only contain numeric characters (0-9)
-```
-
-```php title="Parameters"
-[
-	'error' => "Custom error message"
-]
 ```
 
 ### Password
@@ -493,28 +471,24 @@ public function password(array $params = []): object
 
 This method can be modified to fit your password preferences. By default every character is allowed and there is no minimum requirement for the password other than the length.
 
-```php title="Example"
-$Form->validate('input_password', "")->password();
-
-// Pass
-
-$Form->validate('input_password', "")->password();
-
-// Fail
-```
-
-```title="Default error message"
-Invalid password format
-```
-
 You can set the length of the password by using the `min` and `max` parameters.
 
 ```php title="Parameters"
 [
-	'min' => 16, // default: 6
-	'max' => 128, // default: 50
-	'error' => "Custom error message"
+	'error' => "Invalid password format" // (string)
+	'max' => 50 // (int)
+	'min' => 6 // (int)
 ]
+```
+
+```php title="Example"
+$Form->validate('input_password', "password#123!")->password();
+
+// Pass
+
+$Form->validate('input_password', "toby")->password();
+
+// Fail (password must be min 6 characters bu default)
 ```
 
 ### RegEx
@@ -528,6 +502,12 @@ public function regex(string $regularExpression, array $params = []): object
 }
 ```
 
+```php title="Parameters"
+[
+	'error' => "The field contains characters that are not allowed" // (string)
+]
+```
+
 ```php title="Example"
 $Form->validate("input_field", "Hello")->regex('/[^\p{L} -]+/u');
 
@@ -535,17 +515,7 @@ $Form->validate("input_field", "Hello")->regex('/[^\p{L} -]+/u');
 
 $Form->validate("input_field", "Nr#one!")->regex('/[^\p{L} -]+/u');
 
-// Fail
-```
-
-```title="Default error message"
-The field contains characters that are not allowed
-```
-
-```php title="Parameters"
-[
-	'error' => "Custom error message"
-]
+// Fail (# and ! are not allowed)
 ```
 
 ### Required
@@ -561,6 +531,12 @@ public function required(array $params = []): object
 
 The `required()` method uses the [`isFilled()`](#filled-field) method to check if the input has been submitted correctly. If the `$value` is considered empy or null, an error message is generated.
 
+```php title="Parameters"
+[
+	'error' => "The field is required" // (string)
+]
+```
+
 ```php title="Example"
 $Form->validate('input_field', "Boom, roasted")->required();
 
@@ -569,16 +545,6 @@ $Form->validate('input_field', "Boom, roasted")->required();
 $Form->validate('input_field', " ")->required();
 
 // Fail
-```
-
-```title="Default error message"
-The field is required
-```
-
-```php title="Parameters"
-[
-	'error' => "Custom error message"
-]
 ```
 
 ### Unique
@@ -596,22 +562,18 @@ Insert the column and table names that should be checked in the database. If `$v
 
 A common use case is to check if an email address already exists in the database.
 
-```php title="Example"
-$Form->validate('input_email', $email)->unique('email_col', 'users_tbl');
-
-// No match in db: Pass
-// Match in db: Fail
-```
-
-```title="Default error message"
-The value already exists
-```
-
 The parameter `'ignore'` can be used to ignore a row ID from the search. Example: when a user is updating their profile and their email is already in the db and should not trigger an error message.
 
 ```php title="Parameters"
 [
-	'ignore' => $userId, // default: null
-	'error' => "Custom error message"
+	'error' => "The value already exists" // (string)
+	'ignore' => null, // (int) Row ID
 ]
+```
+
+```php title="Example"
+$Form->validate('input_email', $email)->unique('email_col', 'users_tbl');
+
+// Pass if no match in db
+// Fail if match in db
 ```

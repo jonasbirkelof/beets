@@ -47,7 +47,7 @@ The `APP_*` variables can be used to store values that are app specific and not 
 
 ### DB_
 
-The `DB_*` variables are used within the [`Database.php`](../classes/Databse.md) class that handles your database requests so changing these variable names can break things.
+The `DB_*` variables are used within the Database.php class that handles your database requests so changing these variable names can break things.
 
 Every `DB_*` variable except `DB_CHARSET` is required to exist in the file as configured in the [`~/config/dotenv.php`](./dotenv.md) file.
 

@@ -2,7 +2,19 @@
 
 With Beets PHP you get a convenient session handling. With the built in methods you can easily set, get and reset custom keys. With a flash session, you can create values that is flushed (unset) automatically and directly after a page load. This is perfect for alerts!
 
-All session methods belong to the Session class in the file `~/app/core/Session.php`. For details, please se the [Session.php](./classes/Session.md) page.
+## Session.php
+
+```php title="Location"
+~/app/core/Session.php
+```
+
+```php title="Namespace"
+namespace App\Core;
+```
+
+```php title="Import"
+use App\Core\Session;
+```
 
 ## About flash messages
 
@@ -18,7 +30,7 @@ $_SESSION["_flash"][$key] = $value;
 
 ## Set a flash message
 
-Setting a flash message is really easy with the provided [`flash()`](./classes/Session.md#flash) method:
+Setting a flash message is really easy with the provided `flash()` method:
 
 ```php
 Session::flash("message", "This is a flash message!");
@@ -28,7 +40,7 @@ This code will set the `$key` to "message" and the `$value` to "This is a flash 
 
 ## Get the flash message
 
-When the flash message has been set, you can get it by calling the [`get()`](./classes/Session.md#get) method like this:
+When the flash message has been set, you can get it by calling the `get()` method like this:
 
 ```php
 Session::flash("message", "This is a flash message!");
@@ -52,7 +64,7 @@ This code will echo out "Error" since the key "msg" was not set in the flash arr
 
 ## Reset the flash message
 
-The flash message is automatically unflashed (unset or reset) at the end of the page load. However, if you want to manually unflash the session, you can do it with the with the [`unflash()`](./classes/Session.md#unflash) method:
+The flash message is automatically unflashed (unset or reset) at the end of the page load. However, if you want to manually unflash the session, you can do it with the with the `unflash()` method:
 
 ```php
 Session::unflash();
@@ -62,13 +74,13 @@ The `unflash()` method does not return anything (return type: void) and does not
 
 ## Custom sessions
 
-If you don't want your session to be reset after every page load like the flash messages does, you can set you own keys to the global session variable with the [`put()`](./classes/Session.md#put) method:
+If you don't want your session to be reset after every page load like the flash messages does, you can set you own keys to the global session variable with the `put()` method:
 
 ```php
 Session::put("myName", "Dwight"); // $_SESSION["myName"] = "Dwight"
 ```
 
-To get the session variable you use the same method as with the flash messages, the [`get()`](./classes/Session.md#get) method:
+To get the session variable you use the same method as with the flash messages, the `get()` method:
 
 ```php
 echo Session::get("myName"); // Dwight
@@ -82,11 +94,11 @@ Session::put("myName", "Dwight");
 echo Session::get("name", "Error"); // Error
 ```
 
-To remove the value and key from the session you use the method [`flush()`](./classes/Session.md#flush) which you can read more about [below](#empty-the-session).
+To remove the value and key from the session you use the method `flush()` which you can read more about [below](#empty-the-session).
 
 ## Check if a key exists in the session
 
-There is a practical method you can use if you just want to verify if a specific key exists in the session. Use the [`has()`](./classes/Session.md#has) method and insert the key as a parameter. The method will only return a boolean and it makes use of the `get()` method for checking, so this works with both custom session variables and flash messages.
+There is a practical method you can use if you just want to verify if a specific key exists in the session. Use the `has()` method and insert the key as a parameter. The method will only return a boolean and it makes use of the `get()` method for checking, so this works with both custom session variables and flash messages.
 
 ```php
 Session::put("myKey", "myValue");
@@ -96,7 +108,7 @@ echo Session::has("myKey") ? "true" : "false"; // true
 
 ## Empty the session
 
-You can empty the whole session by setting it to an empty array, or you can unset only a given key with the [`flush()`](./classes/Session.md#flush) method.
+You can empty the whole session by setting it to an empty array, or you can unset only a given key with the `flush()` method.
 
 To empty the whole session, you leave the paramaters empty.
 
@@ -109,7 +121,7 @@ If a parameter (key) is set, the key will be unset (`unset($_SESSION[$key])`) in
 
 ## Destroying the session
 
-The [`destroy()`](./classes/Session.md#destroy) method will destroy the whole session, including the logged in user credentials. It will flush the session, destroy it and reset the coockie parameters. This method is called when a user is logging out.
+The `destroy()` method will destroy the whole session, including the logged in user credentials. It will flush the session, destroy it and reset the coockie parameters. This method is called when a user is logging out.
 
 The method is not returning anything (return type: void) and does not accept any parameters. To execute it, you just call it:
 
