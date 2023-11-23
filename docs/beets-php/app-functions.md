@@ -13,20 +13,16 @@ require_once 'includes/auth.php';
 
 function escape($input)
 {
-	$string = htmlentities($input);
-	$string = htmlspecialchars($input);
-	$string = strip_tags($input);
-	
-	return $string; 
+	...
 }
 
 function view($pattern, $attributes = [])
 {
-	return \App\Core\App::view($pattern, $attributes);
+	...
 }
 
 function old($key, $default = '')
 {
-	return \App\Core\Session::get('old')[$key] ?? $default;
+	...
 }
 ```

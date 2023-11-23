@@ -7,7 +7,7 @@ theme:
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: black
+      primary: blue
       accent: orange
       scheme: default
       toggle:
@@ -69,7 +69,7 @@ nav:
     - Om Beets PHP: beets-php/index.md
     - Content:
       - Database workflow: beets-php/database.md
-      - Error messages: beets-php/error-messages.md
+      - Feedback messages: beets-php/feedback-messages.md
       - Form validation: beets-php/form-validation.md
       - Functions:
         - App functions: beets-php/app-functions.md

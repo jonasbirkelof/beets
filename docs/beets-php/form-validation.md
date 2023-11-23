@@ -100,16 +100,42 @@ $Form->validate('input_field', $input)->required();
 
 ## Error messages
 
-When a validation fails, an error message is created using the Error class. The error message is put in an array and can be accessed so that the user can get feedback on what data was not submitted correctly.
+When a validation fails, an error message is created. The error message is put in an `$errors` array and can be accessed so that the user can get feedback on what data was not submitted correctly.
 
-More details can be found on the [Error messages](./error-messages.md) page.
 
-### Errors
 
-Returns the array that holds the error messages.
+
+
+
+### Set a message
+
+Use the `error()` method to set an error message and store it in the errors array.
 
 ```php
-public function errors(string $label): mixed
+public function error(string $label, $key, $value): object
+{
+	...
+}
+```
+
+- `$label` is the identifier of the message, like the name of the form field that was validated.
+- `$key` is the name of the validation that was performed.
+- `$value` is the error message.
+
+```php title="Example"
+$string = "Assistant to the Manager";
+
+if (mb_strlen($string) > 5) {
+	$Form->error('input_field', 'titleCheck', "Too long title");
+}
+```
+
+### Get the messages
+
+Use the `errors()` method to get the whole errors array. If you only want a specific label, you can pass it as an argument.
+
+```php
+public function errors($label = null): array
 {
 	...
 }
@@ -122,10 +148,22 @@ print_r($Form->errors());
 
 // Output:
 [
-	["input_field"] => [
-		["required"] => "The field is required"
-	]
+    ["input_field"] => [
+        ["titleCheck"] => "Too long title"
+    ]
 ]
+
+print_r($Form->errors('input_field'));
+
+// Output:
+[
+    ["titleCheck"] => "Too long title"
+]
+
+echo $Form->errors('input_field')['titleCheck']; 
+
+// Output:
+Too long title
 ```
 
 The array can hold many labels ("input_field"), but each label can only hold the latest validadion error. 
