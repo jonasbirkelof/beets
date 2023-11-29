@@ -68,8 +68,10 @@ nav:
   - Beets PHP:
     - Om Beets PHP: beets-php/index.md
     - Content:
+      - CSRF Protection: beets-php/csrf-protection.md
       - Database workflow: beets-php/database.md
       - Feedback messages: beets-php/feedback-messages.md
+      - Form methods: beets-php/form-methods.md
       - Form validation: beets-php/form-validation.md
       - Functions:
         - App functions: beets-php/app-functions.md

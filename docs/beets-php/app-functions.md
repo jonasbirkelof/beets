@@ -25,4 +25,14 @@ function old($key, $default = '')
 {
 	...
 }
+
+function method($requestMethod)
+{
+	...
+}
+
+function csrf()
+{
+	...
+}
 ```
