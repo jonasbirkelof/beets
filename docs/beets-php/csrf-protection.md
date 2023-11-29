@@ -54,9 +54,11 @@ Output:
 
 ## Validate a submitted token
 
-To validate the form after submition we use the `CSRF::validate()` method. The method will grab the `#!php $_POST['_csrf']` field value and compare it with the expected hased value. The method will throw a 405 Method Not Allowed error page if the submitted token does not match the expected value.
+To validate the form after submition we use the `CSRF::validate()` method. The method will grab the `#!php $_POST['_csrf']` field value and compare it with the expected hashed value. The expected value is created by hashing the token that was created for the form when it was loaded with the secret key that is only known to the server.
 
-The expected value is created by hashing the token that was created for the form when it was loaded with the secret key that is only known to the server.
+The method will return a boolean of `true` if the tokens match and `false` if they don't. Use this in the controller to either show an error page or redirect the user to somewhare.
+
+!!! warning "You should log any attempt to access a page with an invalid CSRF token!"
 
 ```php
 // Update post
