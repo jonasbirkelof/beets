@@ -1,4 +1,8 @@
-# Form methods
+# Form functions
+
+There are a couple of helper functions for forms. You can read about them on this page.
+
+## Form method
 
 The HTML protocol can only send and recieve POST and GET request methods from a `<form>` tag. Our RESTful framework makes use of the PATCH and DELETE methods so we can use the `method()` helper function to make this work.
 
@@ -24,4 +28,18 @@ In a form in a view it might look something like this:
 	<label for="name">Name</label>
 	<input type="text" name="name">
 </form>
+```
+
+## Hidden field
+
+The `hidden()` function creates a hidden field with a name and a value. It is located in the [application functions file](./app-functions.md) `~/app/core/functions.php`.
+
+```php
+echo hidden('the-field-name', 'the-field-value');
+```
+
+Output:
+
+```html
+<input type="hidden" name="the-field-name" value="the field-value">
 ```
