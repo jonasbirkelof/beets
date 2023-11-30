@@ -26,7 +26,12 @@ function old($key, $default = '')
 	...
 }
 
-function method($requestMethod)
+function hidden(string $name, string $value)
+{
+	...
+}
+
+function method(string $requestMethod)
 {
 	...
 }
