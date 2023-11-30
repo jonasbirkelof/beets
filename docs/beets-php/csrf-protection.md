@@ -64,7 +64,9 @@ The method will return a boolean of `true` if the tokens match and `false` if th
 // Update post
 public static function update(int $postId)
 {
-	CSRF::validate();
+	if (! CSRF::validate()) {
+		App::abort(405);
+	}
 	
 	// Update post
 	
