@@ -21,6 +21,11 @@ function view($pattern, $attributes = [])
 	...
 }
 
+function feedback()
+{
+	...
+}
+
 function old($key, $default = '')
 {
 	...

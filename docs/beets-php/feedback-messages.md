@@ -113,3 +113,19 @@ Feedback::for('save_success')->toast(...);
 
 Feedback::run();
 ```
+
+## Feedback helper function
+
+The `feedback()` helper function is used to [execute (or run) a feedback component](#run-the-feedback) in a view. This makes the code in the view shorter and you con't have to includ the feedback class.
+
+```html
+<?= feedback() ?>
+```
+
+Equals to:
+
+```php
+use App\Http\Feedback;
+
+Feedback::run();
+```
