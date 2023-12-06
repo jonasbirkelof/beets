@@ -67,6 +67,7 @@ nav:
       - Footer: beets-layout/section/footer.md
   - Beets PHP:
     - Om Beets PHP: beets-php/index.md
+    - Cheat sheet: beets-php/cheat-sheet.md
     - Content:
       - CSRF Protection: beets-php/csrf-protection.md
       - Database workflow: beets-php/database.md

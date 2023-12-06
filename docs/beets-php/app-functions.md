@@ -26,6 +26,16 @@ function feedback()
 	...
 }
 
+function errors($field)
+{
+    ...
+}
+
+function errorStyle($field)
+{
+	...
+}
+
 function old($key, $default = '')
 {
 	...
