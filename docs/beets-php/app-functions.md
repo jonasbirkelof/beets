@@ -26,7 +26,7 @@ function feedback()
 	...
 }
 
-function errors($field)
+function error($field)
 {
     ...
 }

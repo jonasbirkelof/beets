@@ -18,8 +18,6 @@ $result = DB::query($sql)->fetchAll();
 Single post:
 
 ```php
-use App\Core\Database as DB;
-
 $sql = "SELECT * FROM table WHERE id = :id";
 $result = DB::query($sql, ['id' => $id])->fetch();
 ```
@@ -53,11 +51,9 @@ return $result ?: [];
 print_r($users);
 ```
 
-### Add
+### Insert into
 
 ```php
-use App\Core\Databas as DB;
-
 $sql = "INSERT INTO table (col_1, col_2) VALUES (:val_1, :val_2)";
 $result = DB::query($sql, ['val_1' => 'foo', 'val_2' => 'bar']);
 ```
@@ -65,8 +61,6 @@ $result = DB::query($sql, ['val_1' => 'foo', 'val_2' => 'bar']);
 ### Update
 
 ```php
-use App\Core\Databas as DB;
-
 $sql = "UPDATE table SET col_1 = :val_1, col_2 = :val_2 WHERE id = :id";
 $result = DB::query($sql, ['val_1' => 'foo', 'val_2' => 'bar', 'id' => 123]);
 ```
@@ -74,8 +68,6 @@ $result = DB::query($sql, ['val_1' => 'foo', 'val_2' => 'bar', 'id' => 123]);
 ### Delete
 
 ```php
-use App\Core\Databas as DB;
-
 $sql = "DELETE FROM table WHERE id = :id";
 $result = DB::query($sql, ['id' => 123]);
 ```
@@ -129,15 +121,15 @@ $Form->flashOld([
 ]);
 ```
 
-Echo the errors and style the input (in view):
+Echo the errors and style the input (in view) if there are any:
 
 ```html
 <input 
 	type="text" 
-	class="<?= errorStyle('first_name') ?>" 
+	class="<?= errorStyle('input_name') ?>" 
 	name="input_name"
 >
-<?= errors('input_name') ?>
+<?= error('input_name') ?>
 ```
 
 Validation methods and their parameters:
@@ -161,6 +153,95 @@ unique(['error', 'ignore'])
 
 ## Feedback
 
+```php
+use App\Http\Feedback;
+
+// Set feedback name
+Feedback::set('save_success');
+
+// Create the component
+Feedback::create('save_success')->toast([
+    'text' =>, 'The post was saved',
+    'style' =>, 'success',
+    'icon' =>, 'fa-solid fa-check-circle'
+]);
+
+// Run the feedback message
+Feedback::run();
+```
+
+Feedback types and their properties:
+
+```php
+alert(['text', 'style', 'icon'])
+toast(['text', 'style', 'icon', 'offset-y'])
+```
+
+Echo out the feedback component (in view) if there is one:
+
+```html
+<?= feedback() ?>
+```
+
 ## Redirecting
 
+```php
+use App\Core\Redirect;
+
+Redirect::to('/page');
+```
+
+### With flash message
+
+```php
+Redirect::to('/page')->with('message', 'This is a message');
+
+Session::get('message'); // This is a message
+```
+
+### Request URI
+
+Use the request URI that is in session
+
+```php
+Redirect::to('/page')->preferRequestUri();
+```
+
 ## Sessions
+
+Flash messages (`flash()`) are deleted after every page reload. Regular session values (`put()`) are deleted at logout.
+
+```php
+use App\Core\Session;
+
+Session::flash('message', 'Hello World'); 
+
+// $_SESSION['_flash']['message'] = "Hello World"
+
+Session::put('name', 'Dwight');
+
+// $_SESSION['name'] = "Dwight"
+```
+
+Get the values:
+
+```php
+echo Session::get('message'); // Hello World
+echo Session::get('name'); // Dwight
+```
+
+Check if key exists:
+
+```php
+Session::has('message'); // true
+Session::has('name'); // true
+```
+
+Empty the session:
+
+```php
+Session::flush(); // Empty the whole session
+Session::flush('name') // Empty only the key "name"
+
+Session::destroy(); // Destroy the session
+```
