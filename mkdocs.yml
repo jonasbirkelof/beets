@@ -66,7 +66,7 @@ nav:
       - Body: beets-layout/section/body.md
       - Footer: beets-layout/section/footer.md
   - Beets PHP:
-    - Om Beets PHP: beets-php/index.md
+    - About: beets-php/index.md
     - Cheat sheet: beets-php/cheat-sheet.md
     - Content:
       - CSRF Protection: beets-php/csrf-protection.md
@@ -79,7 +79,12 @@ nav:
         - Custom functions: beets-php/custom-functions.md
       - Redirecting: beets-php/redirecting.md
       - Sessions: beets-php/sessions.md
-      - User authentication: beets-php/user-authentication.md
+    - Authentication:
+      - About: beets-php/authentication/about.md
+      - Logging in and out: beets-php/authentication/login-logout.md
+      - Passwords: beets-php/authentication/passwords.md
+      - User methods: beets-php/authentication/xxx.md
+      - Roles and permissions: beets-php/authentication/xxx.md
     - Configuration:
       - .env: beets-php/configuration/env.md
       - app.php: beets-php/configuration/app.md

@@ -55,4 +55,9 @@ function csrf()
 {
 	...
 }
+
+function storage(string $filename)
+{
+	...
+}
 ```

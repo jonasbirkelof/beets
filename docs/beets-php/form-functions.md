@@ -20,7 +20,7 @@ Output:
 <input type="hidden" name="_method" value="PATCH">
 ```
 
-In a form in a view it might look something like this:
+In a form inside a view it might look something like this:
 
 ```html
 <form method="POST" name="my-form" id="myForm">
@@ -35,11 +35,21 @@ In a form in a view it might look something like this:
 The `hidden()` function creates a hidden field with a name and a value. It is located in the [application functions file](./app-functions.md) `~/app/core/functions.php`.
 
 ```php
-echo hidden('the-field-name', 'the-field-value');
+echo hidden('secret', 'secretValue');
 ```
 
 Output:
 
 ```html
-<input type="hidden" name="the-field-name" value="the field-value">
+<input type="hidden" name="secret" value="secretValue">
+```
+
+In a form inside a view it might look something like this:
+
+```html
+<form method="POST" name="my-form" id="myForm">
+	<?= hidden('secret', 'secretValue') ?>
+	<label for="name">Name</label>
+	<input type="text" name="name">
+</form>
 ```

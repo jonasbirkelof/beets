@@ -509,7 +509,7 @@ public function password(array $params = []): object
 
 This method can be modified to fit your password preferences. By default every character is allowed and there is no minimum requirement for the password other than the length.
 
-You can set the length of the password by using the `min` and `max` parameters.
+You can set the length of the password by using the `min` and `max` parameters or change the the values `PASSWORD_MIN_LENGTH` and `PASSWORD_MAX_LENGTH` in [app.php](./configuration/app.md) to make an app-wide change.
 
 ```php title="Parameters"
 [

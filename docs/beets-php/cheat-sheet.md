@@ -175,6 +175,7 @@ Feedback types and their properties:
 ```php
 alert(['text', 'style', 'icon'])
 toast(['text', 'style', 'icon', 'offset-y'])
+toast(['text', 'style', 'icon', 'disableIcon', 'bootstrapIcon'])
 ```
 
 Echo out the feedback component (in view) if there is one:
@@ -197,14 +198,6 @@ Redirect::to('/page');
 Redirect::to('/page')->with('message', 'This is a message');
 
 Session::get('message'); // This is a message
-```
-
-### Request URI
-
-Use the request URI that is in session
-
-```php
-Redirect::to('/page')->preferRequestUri();
 ```
 
 ## Sessions

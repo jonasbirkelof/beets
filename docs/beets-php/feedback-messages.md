@@ -101,6 +101,24 @@ Feedback::for('save_success')->toast([
 ]);
 ```
 
+### Callout
+
+The callout will fill the page width depending on where in you HTML you place `Feedback::run()`. You can disable the default icon or use <a href="https://icons.getbootstrap.com/" target="_blank">Boostrap icons</a> istead of the default <a href="https://fontawesome.com/" target="_blank">Fontawesome</a> ones.
+
+[Read more about Beets callouts](../beets-css/components/callout.md).
+
+![](../assets/images/feedback-callout.png)
+
+```php
+Feedback::for('save_success')->callout([
+    'text' => "The post was saved!",
+    'style' => "success",
+
+    'disableIcon' => false,
+    'boostrapIcon' => false
+]);
+```
+
 ## Run the feedback
 
 When the component is created it's time to run it. You can either run it when creating it or later in your code depending on your needs. The `run()` method will `echo` out the component.

@@ -47,34 +47,3 @@ use App\Core\Session;
 
 echo Session::get('message'); // The user was saved!
 ```
-
-## Prefer request URI
-
-Every time a redirect is made, the request URI (`#!php $_SERVER['REQUEST_URI']`) is stored in the session.
-
-If you are redirecting traffic as a result of a validation failure, you can use the request URI in the session with `preferRequestUti()` to redirect the user the the page they were trying to visit while logged out. 
-
-An example of this is if users tries to access a page that can only be accessed when logged in. If they are not logged in they can be redirected to the login page and when logged in be redirected to the page that they were trying to visit before.
-
-When the login form is submitted after the redirect we can append `preferRequestUri()` to use the URI stored in the session instead of the default one in `to()`.
-
-```php title="LoginController.php" hl_lines="12"
-use App\Core\Redirect;
-
-class LoginController
-{
-	public static function store()
-	{
-		// Attempt to log in the user with submitted credentials
-		...
-
-		// Store user information in session
-		...
-
-		// Redirect to "/" if no request URI is set
-		Redirect::to("/")->preferRequestUri();
-	}
-}
-```
-
-The session variable for the request URI will be flushed efter being executed.
