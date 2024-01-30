@@ -125,23 +125,3 @@ $email = Password::getEmail($userId);
 
 Password::sendConfirmationEmail($email);
 ```
-
-## Password methods
-
-update
-
-checkEmail
-
-getEmail
-
-getUserId
-
-
-```php
-public static function update(string $password, string $passwordRepeat, int $userId, int $updatedBy = null): bool
-{
-	...
-}
-
-
-```
