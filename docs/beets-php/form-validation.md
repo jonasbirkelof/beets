@@ -102,11 +102,6 @@ $Form->validate('input_field', $input)->required();
 
 When a validation fails, an error message is created. The error message is put in an `$errors` array and can be accessed so that the user can get feedback on what data was not submitted correctly.
 
-
-
-
-
-
 ### Set a message
 
 Use the `error()` method to set an error message and store it in the errors array.

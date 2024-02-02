@@ -1,5 +1,3 @@
-# Login and logout
-
 This page describes how the login and logout works.
 
 ## Logging in

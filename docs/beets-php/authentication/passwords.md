@@ -1,5 +1,3 @@
-# Passwords
-
 The password management is handled by the `PasswordController.php` and `Password.php` model.
 
 A password is set by the admin when a user is created. The user can change password by itsel by accessing its profile page. An admin can also change tha password using the edit page for the user.
