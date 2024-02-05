@@ -83,11 +83,12 @@ nav:
       - About: beets-php/authentication/about.md
       - Routes and views: beets-php/authentication/routes-and-views.md
       - Database: beets-php/authentication/database.md
+      - Roles and permissions: beets-php/authentication/roles-and-permissions.md
       - Logging in and out: beets-php/authentication/login-logout.md
       - Login validation: beets-php/authentication/login-validation.md
       - Passwords: beets-php/authentication/passwords.md
       - User methods: beets-php/authentication/user-methods.md
-      - Roles and permissions: beets-php/authentication/roles-and-permissions.md
+      - Profile page: beets-php/authentication/profile.md
     - Configuration:
       - .env: beets-php/configuration/env.md
       - app.php: beets-php/configuration/app.md

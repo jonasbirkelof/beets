@@ -23,7 +23,7 @@ This table contains all of your user roles.
 
 This table contains all the different permissions you have in you application.
 
-### amdin__permissions_relations
+### admin__permissions_relations
 
 This table contains the relations betseen the permissions and roles so that the correct permissions are assigned the right roles.	
 
