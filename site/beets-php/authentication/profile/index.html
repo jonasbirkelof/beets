@@ -10,7 +10,7 @@
 
     
       
-        <title>Roles and permissions - Beets Documentation</title>
+        <title>Profile page - Beets Documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#helper-functions" class="md-skip">
+        <a href="#profilecontroller" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Roles and permissions
+              Profile page
             
           </span>
         </div>
@@ -1620,27 +1620,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Roles and permissions
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../roles-and-permissions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1649,45 +1631,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#helper-functions" class="md-nav__link">
-    Helper functions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#permission-methods" class="md-nav__link">
-    Permission methods
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#role-methods" class="md-nav__link">
-    Role methods
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1777,9 +1720,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../profile/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Profile page
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1788,6 +1749,65 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#profilecontroller" class="md-nav__link">
+    ProfileController
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-model" class="md-nav__link">
+    Profile model
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-data" class="md-nav__link">
+    User data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile-image" class="md-nav__link">
+    Profile image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    Password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1960,23 +1980,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#helper-functions" class="md-nav__link">
-    Helper functions
+  <a href="#profilecontroller" class="md-nav__link">
+    ProfileController
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#permission-methods" class="md-nav__link">
-    Permission methods
+  <a href="#profile-model" class="md-nav__link">
+    Profile model
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-data" class="md-nav__link">
+    User data
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#role-methods" class="md-nav__link">
-    Role methods
+        
+          <li class="md-nav__item">
+  <a href="#profile-image" class="md-nav__link">
+    Profile image
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password" class="md-nav__link">
+    Password
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1995,140 +2035,64 @@
                   
 
 
-  <h1>Roles and permissions</h1>
+  <h1>Profile page</h1>
 
-<p>By giving the users different roles you can limit what they can do in your app. The roles have different permissions assigned to them to make it easy for you to fine tune the limitations. </p>
-<p>The <a href="../database/#starter-users">starter-users</a> have the roles user, admin and sysadmin assigned to them so that you can test your permissions and roles. These are the default permissions for each role, but feel free to thange them as you need!</p>
-<table>
-<thead>
-<tr>
-<th>Permisson</th>
-<th style="text-align: center;">syadmin</th>
-<th style="text-align: center;">admin</th>
-<th style="text-align: center;">user</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>view_users_list</td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-</tr>
-<tr>
-<td>view_user</td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-</tr>
-<tr>
-<td>add_user</td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>edit_user</td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>delete_user</td>
-<td style="text-align: center;"><i class="fa-solid fa-check"></i></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<p>The relation between the roles and permissions are set in the table <code>admin__permissions_relations</code> in the database.</p>
-<h2 id="helper-functions">Helper functions</h2>
-<p>You can limit actions by user roles or permissions with these helper functions.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">permission</span><span class="p">(</span><span class="s1">&#39;add_user&#39;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">&quot;&lt;button&gt;Add User&lt;/button&gt;&quot;</span><span class="p">;</span>
+<p>The profile page is the page that the logged in user can change its information. Any user can access this page regardless of user role. The default layout is the same as the edit user page but missing is the ability to change user role and to deactivate the account. </p>
+<p>This is important because you have the possibility to limit what the logged in users can do. If you don't want them to be able to update the email address, you can disable this for the profile page by changing the input field to a read-only field and removing the column from the SQL query in the model.</p>
+<p>The Profile model and ProfileController helps you with you actions for this page.</p>
+<h2 id="profilecontroller">ProfileController</h2>
+<div class="highlight"><span class="filename">Location</span><pre><span></span><code><span class="o">~/</span><span class="nx">app</span><span class="o">/</span><span class="nx">http</span><span class="o">/</span><span class="nx">controllers</span><span class="o">/</span><span class="nx">ProfileController</span><span class="o">.</span><span class="nx">php</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Namespace</span><pre><span></span><code><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Import</span><pre><span></span><code><span class="k">use</span> <span class="nx">App\Http\Controllers\ProfileController</span><span class="p">;</span>
+</code></pre></div>
+<p>The ProfileController is small and contains only of the <code>update()</code> method that updates the profile, and <code>edit()</code> method that shows the profile page.</p>
+<h2 id="profile-model">Profile model</h2>
+<div class="highlight"><span class="filename">Location</span><pre><span></span><code><span class="o">~/</span><span class="nx">app</span><span class="o">/</span><span class="nx">models</span><span class="o">/</span><span class="nx">Profile</span><span class="o">.</span><span class="nx">php</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Namespace</span><pre><span></span><code><span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Import</span><pre><span></span><code><span class="k">use</span> <span class="nx">App\Models\Profile</span><span class="p">;</span>
+</code></pre></div>
+<h3 id="user-data">User data</h3>
+<p>To get the user data when showing the profile page, we can use the <code>find()</code> or <code>findOrFail()</code> methods. None of these methods take an argument or a user ID since they should only return values for the logged in user. They both use <code>User::id()</code> toghether with <code>User::find()</code> and <code>User::findOrFail()</code> to get the user data. You can read about how these methods work on the <a href="../user-methods/#get-any-users-data">User methods page</a>.</p>
+<div class="highlight"><span class="filename">ProfileController.php</span><pre><span></span><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">edit</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="hll">    <span class="nv">$user</span> <span class="o">=</span> <span class="nx">Profile</span><span class="o">::</span><span class="na">findOrFail</span><span class="p">();</span>
+</span>
+    <span class="k">return</span> <span class="nx">App</span><span class="o">::</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;profile.php&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="p">]);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>All users that has the permission "add_user" assigned to their role will see the button. This is effective if you need multiple roles to access an action. You can also build a UI to change what permissions belongs to which roles for  increased flexibility. This even opens up for you to create custom roles on the go by making an interface for setting up this function.</p>
-<p>THe <code>permissions()</code> function checks if the permission (add_user in this case) exists in the array of permissions for the logged in user (<code>Auth::permissions()</code>).</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">role</span><span class="p">(</span><span class="s1">&#39;admin&#39;</span><span class="p">))</span> <span class="p">{</span>
-    <span class="k">echo</span> <span class="s2">&quot;&lt;button&gt;Add User&lt;/button&gt;&quot;</span><span class="p">;</span>
+<div class="highlight"><span class="filename">Profile.php</span><pre><span></span><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">findOrFail</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nx">User</span><span class="o">::</span><span class="na">findOrFail</span><span class="p">(</span><span class="nx">User</span><span class="o">::</span><span class="na">id</span><span class="p">());</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>This way you can hide the button for all users that are not admins. You can also use any of these functions instead of <code>role()</code> to shorten the code and make it more readable. All these functions uses the <code>Auth::hasRole()</code> method to check if the logged in user is assigned the given role.</p>
-<ul>
-<li><code class="highlight"><span class="nx">user</span><span class="p">()</span></code></li>
-<li><code class="highlight"><span class="nx">admin</span><span class="p">()</span></code></li>
-<li><code class="highlight"><span class="nx">sysadmin</span><span class="p">()</span></code></li>
-</ul>
-<div class="highlight"><span class="filename">PHP Example</span><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="nx">permission</span><span class="p">(</span><span class="s1">&#39;add_user&#39;</span><span class="p">))</span> <span class="p">{</span> <span class="k">echo</span> <span class="s2">&quot;Add user&quot;</span><span class="p">;</span> <span class="p">}</span>
+<p>When a user is updating the account information, the <code>Profile::update()</code> method is run. The method validates the input fields, executes the SQL query and updates the user session with the new information.</p>
+<div class="highlight"><span class="filename">ProfileController.php</span><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nx">Profile</span><span class="o">::</span><span class="na">update</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">Redirect</span><span class="o">::</span><span class="na">to</span><span class="p">(</span><span class="s2">&quot;/profile&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;feedback&#39;</span><span class="p">,</span> <span class="s1">&#39;profile_update_failed&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="profile-image">Profile image</h3>
+<p>The user can change the profile image and the ProfileController uses the User model to do this. By using <code>User::updateImage()</code> and <code>User::deleteImage()</code> we get the same functionality as an admin.</p>
+<div class="highlight"><span class="filename">ProfileController.php</span><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nx">User</span><span class="o">::</span><span class="na">updateImage</span><span class="p">(</span><span class="nx">User</span><span class="o">::</span><span class="na">id</span><span class="p">()))</span> <span class="p">{</span>
+    <span class="nx">Redirect</span><span class="o">::</span><span class="na">to</span><span class="p">(</span><span class="s2">&quot;/profile&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;feedback&#39;</span><span class="p">,</span> <span class="s1">&#39;image_update_failed&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">sysadmin</span><span class="p">())</span> <span class="p">{</span> <span class="k">echo</span> <span class="s2">&quot;Delete user&quot;</span><span class="p">;</span> <span class="p">}</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">sysadmin</span><span class="p">()</span> <span class="o">||</span> <span class="nx">admin</span><span class="p">())</span> <span class="p">{</span> <span class="k">echo</span> <span class="s2">&quot;Edit user&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nx">User</span><span class="o">::</span><span class="na">deleteImage</span><span class="p">(</span><span class="nx">User</span><span class="o">::</span><span class="na">id</span><span class="p">()))</span> <span class="p">{</span>
+    <span class="nx">Redirect</span><span class="o">::</span><span class="na">to</span><span class="p">(</span><span class="s2">&quot;/profile&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;feedback&#39;</span><span class="p">,</span> <span class="s1">&#39;image_delete_failed&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">HTML Example</span><pre><span></span><code><span class="cp">&lt;?php if (permission(&#39;add_user)) : ?&gt;</span>
-<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Add User<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="cp">&lt;?php endif; ?&gt;</span>
-
-<span class="cp">&lt;?php if (sysadmin()) : ?&gt;</span>
-<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Delete User<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="cp">&lt;?php endif; ?&gt;</span>
-
-<span class="cp">&lt;?php if (sysadmin() || admin()) : ?&gt;</span>
-<span class="p">&lt;</span><span class="nt">button</span><span class="p">&gt;</span>Edit User<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<span class="cp">&lt;?php endif; ?&gt;</span>
-</code></pre></div>
-<h2 id="permission-methods">Permission methods</h2>
-<div class="highlight"><span class="filename">Location</span><pre><span></span><code><span class="o">~/</span><span class="nx">app</span><span class="o">/</span><span class="nx">models</span><span class="o">/</span><span class="nx">authenticate</span><span class="o">/</span><span class="nx">Permission</span><span class="o">.</span><span class="nx">php</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">Namespace</span><pre><span></span><code><span class="k">namespace</span> <span class="nx">App\Models\Authenticate</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">Import</span><pre><span></span><code><span class="k">use</span> <span class="nx">App\Models\Authenticate\Permission</span><span class="p">;</span>
-</code></pre></div>
-<p>The Permission model proveides you with a couple of methods for retrieving a user permissions.</p>
-<p>You can get an array of multiple permissions or a smaller array with only one permission depending on your needs.</p>
-<p>You can get a specific permission data with the <code>find()</code> method and the permission ID. This method will return an array of data.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$permission</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-</code></pre></div>
-<p>You can use the <code>findByRole()</code> method, that takes a role ID, if you want to get all permissions with all data that belongs to a given role. Since the role ID is set on the user, it's easy to get the role ID with <code>User::role()</code> and pass it in the method to get all permissions that are given to a user. </p>
-<p>This method is used to get the permissions data when logging in so if you want the permissions for the logged in user, just use <code>User::permissions()</code> for better performance.</p>
-<p>return a 404-error page if the user ID does not match any user in the database. The <code>find()</code> method is used to check for the user in the database.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$permission</span> <span class="o">=</span> <span class="nx">User</span><span class="o">::</span><span class="na">findByRole</span><span class="p">(</span><span class="mi">456</span><span class="p">);</span>
-</code></pre></div>
-<p>To get an array of multiple permissions with their data, you can use the <code>get()</code> method. </p>
-<div class="highlight"><pre><span></span><code><span class="nv">$permissions</span> <span class="o">=</span> <span class="nx">Permission</span><span class="o">::</span><span class="na">get</span><span class="p">();</span>
-</code></pre></div>
-<p>This method can recieve two arguments to help you filter and sort your results; <code>orderBy</code> and <code>where</code>. These arguments are inserted as strings at the end of the query. Below are som examples of how to use them. This is also described on the <a href="../../database/#database-methods">Database workflow page</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$permissions</span> <span class="o">=</span> <span class="nx">Permissions</span><span class="o">::</span><span class="na">get</span><span class="p">(</span>
-    <span class="p">[</span><span class="s1">&#39;where&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;name = add_user&#39;</span><span class="p">]]</span>
-<span class="p">);</span>
-
-<span class="nv">$permissions</span> <span class="o">=</span> <span class="nx">Permissions</span><span class="o">::</span><span class="na">get</span><span class="p">(</span>
-    <span class="p">[</span><span class="s1">&#39;orderBy&#39;</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name ASC&#39;</span><span class="p">]]</span>
-<span class="p">);</span>
-</code></pre></div>
-<h2 id="role-methods">Role methods</h2>
-<div class="highlight"><span class="filename">Location</span><pre><span></span><code><span class="o">~/</span><span class="nx">app</span><span class="o">/</span><span class="nx">models</span><span class="o">/</span><span class="nx">authenticate</span><span class="o">/</span><span class="nx">Role</span><span class="o">.</span><span class="nx">php</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">Namespace</span><pre><span></span><code><span class="k">namespace</span> <span class="nx">App\Models\Authenticate</span><span class="p">;</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">Import</span><pre><span></span><code><span class="k">use</span> <span class="nx">App\Models\Authenticate\Role</span><span class="p">;</span>
-</code></pre></div>
-<p>The Role model proveides you with a couple of methods for retrieving role data.</p>
-<p>You can get an array of multiple roles or a smaller array with only one role depending on your needs.</p>
-<p>You can get a specific role data with the <code>find()</code> method and the role ID. This method will return an array of data.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$role</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">find</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
-</code></pre></div>
-<p>To get an array of multiple roles with their data, you can use the <code>get()</code> method. </p>
-<div class="highlight"><pre><span></span><code><span class="nv">$roles</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">get</span><span class="p">();</span>
-</code></pre></div>
-<p>This method can recieve two arguments to help you filter and sort your results; <code>orderBy</code> and <code>where</code>. These arguments are inserted as strings at the end of the query. Below are som examples of how to use them. This is also described on the <a href="../../database/#database-methods">Database workflow page</a>.</p>
-<div class="highlight"><pre><span></span><code><span class="nv">$roles</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">get</span><span class="p">(</span>
-    <span class="p">[</span><span class="s1">&#39;where&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;name = admin&#39;</span><span class="p">]]</span>
-<span class="p">);</span>
-
-<span class="nv">$roles</span> <span class="o">=</span> <span class="nx">Role</span><span class="o">::</span><span class="na">get</span><span class="p">(</span>
-    <span class="p">[</span><span class="s1">&#39;orderBy&#39;</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;name ASC&#39;</span><span class="p">]]</span>
-<span class="p">);</span>
+<h3 id="password">Password</h3>
+<p>When the users change their password we use the same method that the "forgot password?" and admin pages uses to get consistance and the same level of security.</p>
+<div class="highlight"><span class="filename">ProfileController.php</span><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nx">Password</span><span class="o">::</span><span class="na">update</span><span class="p">(</span>
+    <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">],</span> 
+    <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;password_repeat&#39;</span><span class="p">],</span> 
+    <span class="nx">User</span><span class="o">::</span><span class="na">id</span><span class="p">()</span>
+<span class="p">))</span> <span class="p">{</span>
+    <span class="nx">Redirect</span><span class="o">::</span><span class="na">to</span><span class="p">(</span><span class="s2">&quot;/profile&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="s1">&#39;feedback&#39;</span><span class="p">,</span> <span class="s1">&#39;password_update_failed&#39;</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div>
 
 
