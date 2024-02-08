@@ -4,6 +4,8 @@ This page describes how the login and logout works.
 
 You access the login page by going to `/login` or `/` when logged out.
 
+![Login page](../../assets/images/beets-php-screenshot_login.png)
+
 By making a POST request to the /login route an attempt is made to match the submitted credentials. 
 
 ```html

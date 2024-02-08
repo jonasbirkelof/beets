@@ -1,14 +1,15 @@
 site_name: Beets Documentation
 theme:
   # logo: assets/images/beets_symbol_wht_250x232.png
-  logo: assets/images/beets_wht_250x744.png
+  # logo: assets/images/beets_wht_250x744.png
+  logo: assets/images/beets_col_100x298.png
   custom_dir: docs/overrides/
   name: material
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      primary: blue
-      accent: orange
+      primary: white
+      accent: green
       scheme: default
       toggle:
         icon: material/weather-night
@@ -16,7 +17,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       primary: black
-      accent: amber
+      accent: light green
       scheme: slate
       toggle:
         icon: material/weather-sunny
@@ -67,6 +68,7 @@ nav:
       - Footer: beets-layout/section/footer.md
   - Beets PHP:
     - About: beets-php/index.md
+    - Installation: beets-php/installation.md
     - Cheat sheet: beets-php/cheat-sheet.md
     - Content:
       - CSRF Protection: beets-php/csrf-protection.md
@@ -96,6 +98,7 @@ nav:
       - dotenv.php: beets-php/configuration/dotenv.md
 plugins:
   - search
+  - glightbox
 markdown_extensions:
   - attr_list
   - def_list

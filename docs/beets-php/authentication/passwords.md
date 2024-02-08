@@ -6,6 +6,8 @@ A password is set by the admin when a user is created. The user can change passw
 
 If your users have forgotten their password, they can reset it by themselves easily by using the "forgot password?" feature. There is a link in the login form to the page `/reset-password`.
 
+![Forgot password page](../../assets/images/beets-php-screenshot_reset-password.png)
+
 The user enters its registered email addres and an email with instructions will be sent to that email address if it exists. For security reasons there is no error message if the email does not exist so the user must keep an eye out in its inbox.
 
 The email contains a link with a token that is used to connect the email recipient with the user account. By visiting the link the user can select a new password. When it is done, the token is deleted and the link is not accessible any more. 
@@ -114,6 +116,8 @@ The email that contains the link and token for the new password form is sent usi
 Password::sendResetEmail($email, $token);
 ```
 
+![Password reset email 1](../../assets/images/beets-php-screenshot_reset-password-email-1.png)
+
 ### Confirmation email
 
 When the password has changed we can send a confirmation email to the user. If we don't have the user email at this point we can use the `getEmail()` method.
@@ -123,3 +127,5 @@ $email = Password::getEmail($userId);
 
 Password::sendConfirmationEmail($email);
 ```
+
+![Password reset email 2](../../assets/images/beets-php-screenshot_reset-password-email-2.png)

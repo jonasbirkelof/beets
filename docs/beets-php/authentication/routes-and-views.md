@@ -75,6 +75,8 @@ The login form can be accessed only if you are not logged in by visiting `/login
 
 Here is also a link to the reset password form (forgot password?).
 
+![Login page](../../assets/images/beets-php-screenshot_login.png)
+
 ### Reset password form
 
 The user submits their email address to generate a password reset token and send it to their email if it's registered in the database.
@@ -86,6 +88,8 @@ The user submits their email address to generate a password reset token and send
 ```php title="Path"
 /reset-password
 ```
+
+![Reset password page](../../assets/images/beets-php-screenshot_reset-password.png)
 
 ### Select new password form
 
@@ -101,6 +105,8 @@ This form lets the user chose a new password fot the account. After the password
 /reset-password/new?token={token}
 ```
 
+![Select new password page](../../assets/images/beets-php-screenshot_select-new-password.png)
+
 ### List all users
 
 This page lists all users in the database. There are to tabs: active and inactive users. By clicking on the names you will show all the user information. If a password reset token has been created for a user, a key icon will be shown behind the name of the user.
@@ -112,6 +118,8 @@ This page lists all users in the database. There are to tabs: active and inactiv
 ```php title="Path"
 /users
 ```
+
+![List users page](../../assets/images/beets-php-screenshot_user-accounts-list-password-reset-notice.png)
 
 ### Create user
 
@@ -125,6 +133,8 @@ Here you can create a new user.
 /users/create
 ```
 
+![Create user page](../../assets/images/beets-php-screenshot_create-user.png)
+
 ### Show user
 
 Show all user information.
@@ -136,6 +146,9 @@ Show all user information.
 ```php title="Path"
 /users/{userId}
 ```
+
+![Show user page](../../assets/images/beets-php-screenshot_show-user.png)
+![Show user page](../../assets/images/beets-php-screenshot_show-user-password-reset-notice.png)
 
 ### Edit and delete user
 
@@ -153,6 +166,9 @@ Usually you don't want to delete a user since that might leave orphan posts in t
 /users/{userId}/edit
 ```
 
+![Edit user page](../../assets/images/beets-php-screenshot_edit-user.png)
+![Delete user page](../../assets/images/beets-php-screenshot_delete-user.png)
+
 ### Profile
 
 This view is for the logged in user to edit their own information. It provides less inromation than the edit page for admins for security reasons. The user can also update their password from this page.
@@ -164,3 +180,5 @@ This view is for the logged in user to edit their own information. It provides l
 ```php title="Path"
 /profile
 ```
+
+![Profile page](../../assets/images/beets-php-screenshot_profile.png)
