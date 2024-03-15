@@ -1366,7 +1366,7 @@
             
   
   <span class="md-ellipsis">
-    Content
+    Functionality
   </span>
   
 
@@ -1376,7 +1376,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
-            Content
+            Functionality
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1408,11 +1408,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../custom-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Database workflow
+    Database
   </span>
   
 
@@ -1549,96 +1570,6 @@
   
   
   
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5_6" id="__nav_4_5_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Functions
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5_6">
-            <span class="md-nav__icon md-icon"></span>
-            Functions
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../app-functions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    App functions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../custom-functions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Custom functions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../redirecting/" class="md-nav__link">
         
@@ -1661,11 +1592,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sessions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Sessions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage-images-assets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage, images & assets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Views
   </span>
   
 
@@ -1775,11 +1769,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication/database/" class="md-nav__link">
+      <a href="../authentication/auth-database-tables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Database
+    Database tables
   </span>
   
 
@@ -2128,7 +2122,7 @@
 <p>There are a couple of helper functions for forms. You can read about them on this page.</p>
 <h2 id="form-method">Form method</h2>
 <p>The HTML protocol can only send and recieve POST and GET request methods from a <code>&lt;form&gt;</code> tag. Our RESTful framework makes use of the PATCH and DELETE methods so we can use the <code>method()</code> helper function to make this work.</p>
-<p>The <code>method()</code> function is located in the <a href="../app-functions/">application functions file</a> <code>~/app/core/functions.php</code>.</p>
+<p>The <code>method()</code> function is located in the <a href="./app-functions.md">application functions file</a> <code>~/App/Core/functions.php</code>.</p>
 <p>The <code>method()</code> function will return an input field with the necessary properties as well as the request method of your chosing. When the router then runs the request it will look for a <code class="highlight"><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;_method&#39;</span><span class="p">]</span></code> and use that as the request method instead of POST that was really sent.</p>
 <div class="highlight"><pre><span></span><code><span class="k">echo</span> <span class="nx">method</span><span class="p">(</span><span class="s1">&#39;PATCH&#39;</span><span class="p">);</span>
 </code></pre></div>
@@ -2143,7 +2137,7 @@
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 </code></pre></div>
 <h2 id="hidden-field">Hidden field</h2>
-<p>The <code>hidden()</code> function creates a hidden field with a name and a value. It is located in the <a href="../app-functions/">application functions file</a> <code>~/app/core/functions.php</code>.</p>
+<p>The <code>hidden()</code> function creates a hidden field with a name and a value. It is located in the <a href="./app-functions.md">application functions file</a> <code>~/App/Core/functions.php</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="k">echo</span> <span class="nx">hidden</span><span class="p">(</span><span class="s1">&#39;secret&#39;</span><span class="p">,</span> <span class="s1">&#39;secretValue&#39;</span><span class="p">);</span>
 </code></pre></div>
 <p>Output:</p>

@@ -1364,7 +1364,7 @@
             
   
   <span class="md-ellipsis">
-    Content
+    Functionality
   </span>
   
 
@@ -1374,7 +1374,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
-            Content
+            Functionality
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1406,11 +1406,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../../custom-functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../database/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Database workflow
+    Database
   </span>
   
 
@@ -1489,96 +1510,6 @@
   
   
   
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5_6" id="__nav_4_5_6_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Functions
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5_6">
-            <span class="md-nav__icon md-icon"></span>
-            Functions
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../app-functions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    App functions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../custom-functions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Custom functions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../redirecting/" class="md-nav__link">
         
@@ -1601,11 +1532,74 @@
   
   
     <li class="md-nav__item">
+      <a href="../../routing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Routing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../sessions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Sessions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage-images-assets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage, images & assets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../views/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Views
   </span>
   
 
@@ -1717,11 +1711,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../database/" class="md-nav__link">
+      <a href="../auth-database-tables/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Database
+    Database tables
   </span>
   
 
@@ -2190,7 +2184,7 @@
 <p>This is important because you have the possibility to limit what the logged in users can do. If you don't want them to be able to update the email address, you can disable this for the profile page by changing the input field to a read-only field and removing the column from the SQL query in the model.</p>
 <p>The Profile model and ProfileController helps you with you actions for this page.</p>
 <h2 id="profilecontroller">ProfileController</h2>
-<div class="highlight"><span class="filename">Location</span><pre><span></span><code><span class="o">~/</span><span class="nx">app</span><span class="o">/</span><span class="nx">http</span><span class="o">/</span><span class="nx">controllers</span><span class="o">/</span><span class="nx">ProfileController</span><span class="o">.</span><span class="nx">php</span>
+<div class="highlight"><span class="filename">Location</span><pre><span></span><code><span class="o">~/</span><span class="nx">App</span><span class="o">/</span><span class="nx">Http</span><span class="o">/</span><span class="nx">Controllers</span><span class="o">/</span><span class="nx">ProfileController</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">Namespace</span><pre><span></span><code><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
 </code></pre></div>
@@ -2198,7 +2192,7 @@
 </code></pre></div>
 <p>The ProfileController is small and contains only of the <code>update()</code> method that updates the profile, and <code>edit()</code> method that shows the profile page.</p>
 <h2 id="profile-model">Profile model</h2>
-<div class="highlight"><span class="filename">Location</span><pre><span></span><code><span class="o">~/</span><span class="nx">app</span><span class="o">/</span><span class="nx">models</span><span class="o">/</span><span class="nx">Profile</span><span class="o">.</span><span class="nx">php</span>
+<div class="highlight"><span class="filename">Location</span><pre><span></span><code><span class="o">~/</span><span class="nx">App</span><span class="o">/</span><span class="nx">Models</span><span class="o">/</span><span class="nx">Profile</span><span class="o">.</span><span class="nx">php</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">Namespace</span><pre><span></span><code><span class="k">namespace</span> <span class="nx">App\Models</span><span class="p">;</span>
 </code></pre></div>

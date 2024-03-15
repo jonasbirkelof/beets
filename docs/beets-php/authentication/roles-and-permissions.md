@@ -24,7 +24,7 @@ if (permission('add_user')) {
 
 All users that has the permission "add_user" assigned to their role will see the button. This is effective if you need multiple roles to access an action. You can also build a UI to change what permissions belongs to which roles for  increased flexibility. This even opens up for you to create custom roles on the go by making an interface for setting up this function.
 
-THe `permissions()` function checks if the permission (add_user in this case) exists in the array of permissions for the logged in user (`Auth::permissions()`).
+The `permissions()` function checks if the permission (add_user in this case) exists in the array of permissions for the logged in user (`Auth::permissions()`).
 
 ```php
 if (role('admin')) {
@@ -62,7 +62,7 @@ if (sysadmin() || admin()) { echo "Edit user"; }
 ## Permission methods
 
 ```php title="Location"
-~/app/models/authenticate/Permission.php
+~/App/Models/Authenticate/Permission.php
 ```
 
 ```php title="Namespace"
@@ -115,7 +115,7 @@ $permissions = Permissions::get(
 ## Role methods
 
 ```php title="Location"
-~/app/models/authenticate/Role.php
+~/App/Models/Authenticate/Role.php
 ```
 
 ```php title="Namespace"

@@ -3,7 +3,7 @@ The Error class handles incomming error messages and stores them in an array.
 ## Feedback.php
 
 ```php title="Location"
-~/app/http/Feedback.php
+~/App/Http/Feedback.php
 ```
 
 ```php title="Namespace"

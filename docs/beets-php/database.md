@@ -3,7 +3,7 @@ Beets PHP contains several tools for you to easily work with your database. On t
 ## Database.php
 
 ```php title="Location"
-~/app/core/Database.php
+~/App/Core/Database.php
 ```
 
 ```php title="Namespace"
@@ -30,7 +30,7 @@ DB_USERNAME=username
 DB_PASSWORD=
 ```
 
-The table names can be accessed by constants defined in [~/config/config.php](../configuration/app.md).
+The table names can be accessed by constants defined in [~/config/config.php](../configuration/config.md).
 
 ```php
 define('DB_USER_ACCOUNTS', DB_TABLE_PREFIX . 'admin__user_accounts');
@@ -64,6 +64,14 @@ By importing Database.php with `use App\Core\Database` you get access to all dat
 use App\Core\Database as DB;
 
 DB::query($sql)->fetchAll();
+```
+
+## Escape special characters
+
+Before inserting information to your database, you must escape (remove) all special characters so that no harmful code can be submitted. Use the `escape()` function to do so:
+
+```php
+$inputName = escape($formData['input_name']);
 ```
 
 ## Database methods

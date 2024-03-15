@@ -5,7 +5,7 @@ With Beets PHP you get a convenient session handling. With the built in methods 
 ## Session.php
 
 ```php title="Location"
-~/app/core/Session.php
+~/App/Core/Session.php
 ```
 
 ```php title="Namespace"

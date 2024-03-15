@@ -3,7 +3,7 @@ Beets PHP has a class with methods for form validation. Access them by importing
 ## Form.php
 
 ```php title="Location"
-~/app/core/Form.php
+~/App/Core/Form.php
 ```
 
 ```php title="Namespace"
@@ -178,6 +178,45 @@ public function flashErrors(): void
 
 ```php title="Example"
 $Form->flashErrors();
+```
+
+### Use in view
+
+If the errors method contains errors, you would want to show them in you form. To do this you can use the `error()` and `errorStyle()` functions. You pass the input name as arguments and if the input name is associated with an error, it will be printed where the `error()` function is. The `errorStyle()` function is echoed as a class and will print a bootstrap class styling the form field if there is an error.
+
+```html
+<input 
+	type="text" 
+	class="<?= errorStyle('input_name') ?>" 
+	name="input_name"
+>
+<?= error('input_name') ?>
+```
+
+### Persist old data
+
+If the validations fails and the user is redirected back to the form and is presented with the error messages, it would be helpful to see what the faulty input is. 
+
+After we flash the errors with `$Form->flashErrors()` we can flash the input data that we validated to the session. This session data can then be retrieved with the `old()` helper function.
+
+```php title="Example"
+$inputEmail = "notanemail";
+$Form->validate('input_email', $inputEmail)->email();
+$Form->flashErrors();
+
+Session::flash('old', [
+	'input_email' => $inputEmail,
+]);
+
+// In the form view:
+<input 
+	type="email"
+	name="input_email"
+	value="<?= old('input_email) ?>"
+>
+
+// Output of old('input_email'):
+notanemail
 ```
 
 ## Validation methods

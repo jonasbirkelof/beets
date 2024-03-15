@@ -17,7 +17,7 @@ The token and link is only enabled for a limited time (default = 1 hour). If you
 ## Password.php
 
 ```php title="Location"
-~/app/models/authenticate/Password.php
+~/App/Models/Authenticate/Password.php
 ```
 
 ```php title="Namespace"

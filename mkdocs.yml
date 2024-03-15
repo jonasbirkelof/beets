@@ -71,21 +71,22 @@ nav:
     - Installation: beets-php/installation.md
     - Deploy: beets-php/deploy.md
     - Cheat sheet: beets-php/cheat-sheet.md
-    - Content:
+    - Functionality:
       - CSRF Protection: beets-php/csrf-protection.md
-      - Database workflow: beets-php/database.md
+      - Custom functions: beets-php/custom-functions.md
+      - Database: beets-php/database.md
       - Feedback messages: beets-php/feedback-messages.md
       - Form functions: beets-php/form-functions.md
       - Form validation: beets-php/form-validation.md
-      - Functions:
-        - App functions: beets-php/app-functions.md
-        - Custom functions: beets-php/custom-functions.md
       - Redirecting: beets-php/redirecting.md
+      - Routing: beets-php/routing.md
       - Sessions: beets-php/sessions.md
+      - Storage, images & assets: beets-php/storage-images-assets.md
+      - Views: beets-php/views.md
     - Authentication:
       - About: beets-php/authentication/about.md
       - Routes and views: beets-php/authentication/routes-and-views.md
-      - Database: beets-php/authentication/database.md
+      - Database tables: beets-php/authentication/auth-database-tables.md
       - Roles and permissions: beets-php/authentication/roles-and-permissions.md
       - Logging in and out: beets-php/authentication/login-logout.md
       - Login validation: beets-php/authentication/login-validation.md

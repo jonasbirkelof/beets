@@ -30,4 +30,4 @@ if (guest()) {
 <?php endif; ?>
 ```
 
-The helper functions are located in `~/app/core/includes/auth.php`.
+The helper functions are located in `~/App/Core/includes/auth.php`.

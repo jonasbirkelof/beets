@@ -7,7 +7,7 @@ The Profile model and ProfileController helps you with you actions for this page
 ## ProfileController
 
 ```php title="Location"
-~/app/http/controllers/ProfileController.php
+~/App/Http/Controllers/ProfileController.php
 ```
 
 ```php title="Namespace"
@@ -23,7 +23,7 @@ The ProfileController is small and contains only of the `update()` method that u
 ## Profile model
 
 ```php title="Location"
-~/app/models/Profile.php
+~/App/Models/Profile.php
 ```
 
 ```php title="Namespace"

@@ -7,7 +7,7 @@ The following routes are registered in `~/routes/web.php` for the authentication
 ### LoginController()
 
 ```php title="Location"
-~/app/http/controllers/authenticate/LoginController.php
+~/App/Http/Controllers/Authenticate/LoginController.php
 ```
 
 | Rote   | Request method | Function  | Description                 |
@@ -19,7 +19,7 @@ The following routes are registered in `~/routes/web.php` for the authentication
 ### PasswordController()
 
 ```php title="Location"
-~/app/http/controllers/authenticate/PasswordController.php
+~/App/Http/Controllers/Authenticate/PasswordController.php
 ```
 
 | Rote                | Request method | Function | Description                      |
@@ -32,7 +32,7 @@ The following routes are registered in `~/routes/web.php` for the authentication
 ### UserController()
 
 ```php title="Location"
-~/app/http/controllers/UserController.php
+~/App/Http/Controllers/UserController.php
 ```
 
 | Rote                 | Request method | Function  | Description           |
@@ -48,7 +48,7 @@ The following routes are registered in `~/routes/web.php` for the authentication
 ### ProfileController()
 
 ```php title="Location"
-~/app/http/controllers/ProfileController.php
+~/App/Http/Controllers/ProfileController.php
 ```
 
 | Rote     | Request method | Function | Description            |
