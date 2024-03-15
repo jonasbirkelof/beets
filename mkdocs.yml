@@ -69,6 +69,7 @@ nav:
   - Beets PHP:
     - About: beets-php/index.md
     - Installation: beets-php/installation.md
+    - Deploy: beets-php/deploy.md
     - Cheat sheet: beets-php/cheat-sheet.md
     - Content:
       - CSRF Protection: beets-php/csrf-protection.md
@@ -93,12 +94,14 @@ nav:
       - Profile page: beets-php/authentication/profile.md
     - Configuration:
       - .env: beets-php/configuration/env.md
-      - app.php: beets-php/configuration/app.md
+      - config.php: beets-php/configuration/config.md
       - data.php: beets-php/configuration/data.md
       - dotenv.php: beets-php/configuration/dotenv.md
 plugins:
   - search
-  - glightbox
+  - glightbox:
+       skip_classes:
+         - skip-lightbox
 markdown_extensions:
   - attr_list
   - def_list

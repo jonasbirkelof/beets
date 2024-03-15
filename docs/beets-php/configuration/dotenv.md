@@ -24,6 +24,8 @@ $dotenv->required([
 
 // Keys that must exist in .env but can be empty
 $dotenv->required([
+	'APP_ENV',
+	'APP_DEBUG',
 	'DB_PASSWORD',
 ]);
 ```

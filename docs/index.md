@@ -18,8 +18,8 @@ This project is always growing and developing. Right now my primary focus is on 
         <div class="card h-100 shadow-sm markdown">
             <div class="card-body text-center">
                 <a href="/beets/beets-css">
-                    <img src="assets/images/beetscss_col_100x416.png#only-light" class="border-0" style="max-height: 90px;">
-                    <img src="assets/images/beetscss_col_inv_100x416.png#only-dark" class="border-0" style="max-height: 90px;">
+                    <img src="assets/images/beetscss_col_100x416.png#only-light" class="border-0 skip-lightbox" style="max-height: 90px;">
+                    <img src="assets/images/beetscss_col_inv_100x416.png#only-dark" class="border-0 skip-lightbox" style="max-height: 90px;">
                 </a>
                 <br>
                 <i class="fa-brands fa-github"></i>
@@ -31,8 +31,8 @@ This project is always growing and developing. Right now my primary focus is on 
         <div class="card h-100 shadow-sm markdown">
             <div class="card-body text-center">
                 <a href="/beets/beets-layout">
-                    <img src="assets/images/beetslayout_col_100x480.png#only-light" class="border-0" style="max-height: 90px;">
-                    <img src="assets/images/beetslayout_col_inv_100x480.png#only-dark" class="border-0" style="max-height: 90px;">
+                    <img src="assets/images/beetslayout_col_100x480.png#only-light" class="border-0 skip-lightbox" style="max-height: 90px;">
+                    <img src="assets/images/beetslayout_col_inv_100x480.png#only-dark" class="border-0 skip-lightbox" style="max-height: 90px;">
                 </a>
                 <br>
                 <i class="fa-brands fa-github"></i>
@@ -44,8 +44,8 @@ This project is always growing and developing. Right now my primary focus is on 
         <div class="card h-100 shadow-sm markdown">
             <div class="card-body text-center">
                 <a href="/beets/beets-php">
-                    <img src="assets/images/beetsphp_col_100x421.png#only-light" class="border-0" style="max-height: 90px;">
-                    <img src="assets/images/beetsphp_col_inv_100x421.png#only-dark" class="border-0" style="max-height: 90px;">
+                    <img src="assets/images/beetsphp_col_100x421.png#only-light" class="border-0 skip-lightbox" style="max-height: 90px;">
+                    <img src="assets/images/beetsphp_col_inv_100x421.png#only-dark" class="border-0 skip-lightbox" style="max-height: 90px;">
                 </a>
                 <br>
                 <i class="fa-brands fa-github"></i>

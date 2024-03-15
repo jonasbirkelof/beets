@@ -10,7 +10,7 @@ You can get more detailed descriptions and more functionality by visiting [vluca
 APP_NAME="My App"
 APP_DESCRIPTION="This is my app"
 APP_ID=1
-APP_ENV=local
+APP_ENV=development
 APP_DEBUG=true
 APP_URL=http://myapp.local
 APP_COPYRIGHT="The Owner"
@@ -24,6 +24,8 @@ DB_USERNAME=username
 DB_PASSWORD=password
 
 CSRF_SECRET_KEY=secretkey
+
+EMAIL_SENDER=noreply@example.com
 ```
 
 ## .gitignore
@@ -60,4 +62,46 @@ You can access your env variables uwing the `$_ENV` or `$_SERVER` super globals:
 ```php
 $appName = $_ENV['APP_NAME'];
 $appName = $_SERVER['APP_NAME'];
+
+echo $appName; // My App
+```
+
+Using them publicly can ba a safety issue though, so every env variable is defined as a constant in the `~/config/config.php` file. If you add custom env variables, make sure to add them to the config file.
+
+```php
+echo APP_NAME; // My App
+```
+
+## Environment
+
+You can set the appllication environment with the variable `APP_ENV`. By default it is set to `development` but when you deploy you application to production, make sure to set it to `production`. These variables can be used to change the application behaviour, style or functionality depending on its location. There are also a `env()` helper function that you can use to get the set environment.
+
+You can read mor on how to use the environment variable on the [Deploy page](../deploy.md).
+
+```php title=".env"
+APP_ENV=development
+```
+
+```php
+if (env('development')) {
+	// Development functionality
+}
+
+if (env('production')) {
+	// Production functionality
+}
+
+echo env(); // developemnt
+```
+
+Along the `env()` function is the `debug()` function that retrieves the `APP_DEBUG` env variable and translates it into a boolean. Use this to toggle functionality that should only be used for debugging.
+
+```php title=".env"
+APP_DEBUG=true
+```
+
+```php
+if (debug()) {
+	// Debug funtionality
+}
 ```

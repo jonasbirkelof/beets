@@ -30,6 +30,32 @@ DB_USERNAME=username
 DB_PASSWORD=
 ```
 
+The table names can be accessed by constants defined in [~/config/config.php](../configuration/app.md).
+
+```php
+define('DB_USER_ACCOUNTS', DB_TABLE_PREFIX . 'admin__user_accounts');
+define('DB_ROLES', DB_TABLE_PREFIX . 'admin__roles');
+define('DB_PERMISSIONS', DB_TABLE_PREFIX . 'admin__permissions');
+define('DB_PERMISSIONS_REL', DB_TABLE_PREFIX . 'admin__permissions_relations');
+```
+
+If you need to have a prefix for your tables, you can set it with the `DB_TABLE_PREFIX` constant. The constant can be changed depending on the [application environment](./configuration/env.md#environment):
+
+```php
+// Development variables
+if (APP_ENV == 'development') {
+	$dbTablePrefix = '';
+}
+
+// Production variables
+if (APP_ENV == 'production') {
+	$dbTablePrefix = '';
+}
+
+define('DB_TABLE_PREFIX', $dbTablePrefix);
+define('DB_USER_ACCOUNTS', DB_TABLE_PREFIX . 'admin__user_accounts');
+```
+
 ## Connect to the database
 
 By importing Database.php with `use App\Core\Database` you get access to all database functionality. The connection is initiated in the `__construct()` which retrieves the credentials from the [.env](./configuration/env.md) file and uses them to set up a new PDO object.
