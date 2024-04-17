@@ -1,27 +1,17 @@
-site_name: Beets Documentation
+# Project information
+site_name: Beets
+
+# Repository
+# -
+
+# Copyright
+copyright: Copyright &copy; 2023 - 2024 Jonas Birkel&#246;f
+
+# Configuration
 theme:
-  # logo: assets/images/beets_symbol_wht_250x232.png
-  # logo: assets/images/beets_wht_250x744.png
-  logo: assets/images/beets_col_100x298.png
-  custom_dir: docs/overrides/
   name: material
-  palette:
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      primary: white
-      accent: green
-      scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      primary: black
-      accent: light green
-      scheme: slate
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
+  custom_dir: docs/overrides/
+  logo: assets/images/beets_symbol_wht_250x232.png
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -29,80 +19,34 @@ theme:
     - search.suggest
     - content.code.copy
     - navigation.top
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      primary: custom
+      accent: custom
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: custom
+      accent: custom
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+# Custom CSS
 extra_css:
   - assets/stylesheets/custom.css
-nav:
-  - Home:
-    - Welcome: index.md
-    - Beets CSS: beets-css/index.md
-    - Beets Layout: beets-layout/index.md
-    - Beets PHP: beets-php/index.md
-  - Beets CSS:
-    - About: beets-css/index.md
-    - Getting started: beets-css/getting-started.md
-    - Download: https://github.com/jonasbirkelof/beets-css
-    - Forms:
-      - Checks and radios: beets-css/forms/checks-and-radios.md
-    - Components:
-      - Breadcrumb: beets-css/components/breadcrumb.md
-      - Buttons: beets-css/components/buttons.md
-      - Callout: beets-css/components/callout.md
-      - Card: beets-css/components/card.md
-      - Dropdowns: beets-css/components/dropdowns.md
-      - Modal: beets-css/components/modal.md
-    - Utilities:
-      - Colors: beets-css/utilities/colors.md
-      - Cursor: beets-css/utilities/cursor.md
-      - Spacing: beets-css/utilities/spacing.md
-  - Beets Layout:
-    - About: beets-layout/index.md
-    - Download: beets-layout/download.md
-    - Install: beets-layout/install.md
-    - Sections:
-      - Overview: beets-layout/section/overview.md
-      - Logo: beets-layout/section/logo.md
-      - Sidebar: beets-layout/section/sidebar.md
-      - Main: beets-layout/section/main.md
-      - Header: beets-layout/section/header.md
-      - Body: beets-layout/section/body.md
-      - Footer: beets-layout/section/footer.md
-  - Beets PHP:
-    - About: beets-php/index.md
-    - Installation: beets-php/installation.md
-    - Deploy: beets-php/deploy.md
-    - Cheat sheet: beets-php/cheat-sheet.md
-    - Functionality:
-      - CSRF Protection: beets-php/csrf-protection.md
-      - Custom functions: beets-php/custom-functions.md
-      - Database: beets-php/database.md
-      - Feedback messages: beets-php/feedback-messages.md
-      - Form functions: beets-php/form-functions.md
-      - Form validation: beets-php/form-validation.md
-      - Redirecting: beets-php/redirecting.md
-      - Routing: beets-php/routing.md
-      - Sessions: beets-php/sessions.md
-      - Storage, images & assets: beets-php/storage-images-assets.md
-      - Views: beets-php/views.md
-    - Authentication:
-      - About: beets-php/authentication/about.md
-      - Routes and views: beets-php/authentication/routes-and-views.md
-      - Database tables: beets-php/authentication/auth-database-tables.md
-      - Roles and permissions: beets-php/authentication/roles-and-permissions.md
-      - Logging in and out: beets-php/authentication/login-logout.md
-      - Login validation: beets-php/authentication/login-validation.md
-      - Passwords: beets-php/authentication/passwords.md
-      - User methods: beets-php/authentication/user-methods.md
-      - Profile page: beets-php/authentication/profile.md
-    - Configuration:
-      - .env: beets-php/configuration/env.md
-      - config.php: beets-php/configuration/config.md
-      - data.php: beets-php/configuration/data.md
-      - dotenv.php: beets-php/configuration/dotenv.md
+
+# Plugins
 plugins:
   - search
   - glightbox:
        skip_classes:
          - skip-lightbox
+
+# Extensions
 markdown_extensions:
   - attr_list
   - def_list
@@ -132,3 +76,81 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.tilde
+
+# Page tree
+nav:
+  - Home:
+    - Welcome: index.md
+    - Beets CSS: beets-css/index.md
+    - Beets Layout: beets-layout/index.md
+    - Beets PHP: beets-php/index.md
+  
+  # Beets CSS
+  - Beets CSS:
+    - About: beets-css/index.md
+    - Getting started: beets-css/getting-started.md
+    - Download: https://github.com/jonasbirkelof/beets-css
+    - GitHub: https://github.com/jonasbirkelof/beets-css
+    - Forms:
+      - Checks and radios: beets-css/forms/checks-and-radios.md
+    - Components:
+      - Breadcrumb: beets-css/components/breadcrumb.md
+      - Buttons: beets-css/components/buttons.md
+      - Callout: beets-css/components/callout.md
+      - Card: beets-css/components/card.md
+      - Dropdowns: beets-css/components/dropdowns.md
+      - Modal: beets-css/components/modal.md
+    - Utilities:
+      - Colors: beets-css/utilities/colors.md
+      - Cursor: beets-css/utilities/cursor.md
+      - Spacing: beets-css/utilities/spacing.md
+    
+  # Beets Layout
+  - Beets Layout:
+    - About: beets-layout/index.md
+    - Download: beets-layout/download.md
+    - Install: beets-layout/install.md
+    - GitHub: https://github.com/jonasbirkelof/beets-layout
+    - Sections:
+      - Overview: beets-layout/section/overview.md
+      - Logo: beets-layout/section/logo.md
+      - Sidebar: beets-layout/section/sidebar.md
+      - Main: beets-layout/section/main.md
+      - Header: beets-layout/section/header.md
+      - Body: beets-layout/section/body.md
+      - Footer: beets-layout/section/footer.md
+    
+  # Beets PHP
+  - Beets PHP:
+    - About: beets-php/index.md
+    - Installation: beets-php/installation.md
+    - Deploy: beets-php/deploy.md
+    - Cheat sheet: beets-php/cheat-sheet.md
+    - GitHub: https://github.com/jonasbirkelof/beets-php
+    - Functionality:
+      - CSRF Protection: beets-php/csrf-protection.md
+      - Custom functions: beets-php/custom-functions.md
+      - Database: beets-php/database.md
+      - Feedback messages: beets-php/feedback-messages.md
+      - Form functions: beets-php/form-functions.md
+      - Form validation: beets-php/form-validation.md
+      - Redirecting: beets-php/redirecting.md
+      - Routing: beets-php/routing.md
+      - Sessions: beets-php/sessions.md
+      - Storage, images & assets: beets-php/storage-images-assets.md
+      - Views: beets-php/views.md
+    - Authentication:
+      - About: beets-php/authentication/about.md
+      - Routes and views: beets-php/authentication/routes-and-views.md
+      - Database tables: beets-php/authentication/auth-database-tables.md
+      - Roles and permissions: beets-php/authentication/roles-and-permissions.md
+      - Logging in and out: beets-php/authentication/login-logout.md
+      - Login validation: beets-php/authentication/login-validation.md
+      - Passwords: beets-php/authentication/passwords.md
+      - User methods: beets-php/authentication/user-methods.md
+      - Profile page: beets-php/authentication/profile.md
+    - Configuration:
+      - .env: beets-php/configuration/env.md
+      - config.php: beets-php/configuration/config.md
+      - data.php: beets-php/configuration/data.md
+      - dotenv.php: beets-php/configuration/dotenv.md

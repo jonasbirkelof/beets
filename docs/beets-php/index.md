@@ -6,6 +6,8 @@ Also included is [Beets CSS](https://github.com/jonasbirkelof/beets-css) and [Be
 
 ## Dependencies
 
+PHP 8.0 or newer required (not tested with older versions).
+
 All libraries and packages are downloaded upon installation, but please take time to acknowledge these amazing people and visit their pages for more detaild documentation:
 
 - [Bramus Router](https://github.com/bramus/router)

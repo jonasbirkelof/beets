@@ -8,12 +8,20 @@
 	--code-bg-color-dark: rgb(0, 0, 0, .3);
 	--inline-code-bg-color: rgba(175, 184, 193, 0.2);
 	--inline-code-bg-color-dark: rgba(0, 0, 0, .4);
+	--md-primary-fg-color:        #045163;
+	--md-primary-fg-color--light: #078faf;
+	--md-primary-fg-color--dark:  #012730;
+	--md-accent-fg-color:  		  var(--md-primary-fg-color--light);
 }
 
 /* Nav link accent color */
 .md-nav__item .md-nav__link--active,
 .md-typeset a {
 	color: var(--md-accent-fg-color);
+}
+.md-nav__item .md-nav__link--active:hover,
+.md-typeset a:hover {
+	filter: brightness(1.4);
 }
 
 /* Prevent enlargement of font size on bigger screen sizes */
@@ -108,6 +116,9 @@ body[data-md-color-scheme='slate'] {
 .md-sidebar label {
 	color: #000 !important;
 }
+.md-sidebar .md-nav__title {
+	color: #fff !important;
+}
 body[data-md-color-scheme='slate'] {
 	.md-nav__list label,
 	.md-sidebar label {
@@ -123,16 +134,6 @@ h1 img {
 	max-height: 80px;
 	border: 0 !important;
 	padding: 0 !important;
-}
-
-/* Show logo in header on small screens */
-nav.md-header__inner > .md-logo {
-	display: block;
-}
-
-/* Re-order hamburger menu */
-nav.md-header__inner > label[for="__drawer"] {
-	order: -1;
 }
 
 /*
