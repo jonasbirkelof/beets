@@ -2,26 +2,36 @@
 
 This file contains the environmental variables that are used throughout the application. The library used for the env handlig is [vlucas PHP dotenv](https://github.com/vlucas/phpdotenv). The file is located at the project root and is loaded via the [`~/config/dotenv.php`](./dotenv.md) file.
 
-Beets PHP comes with an example file named `.env.example` that you can modify to your needs.
+Beets PHP comes with a pre-configured `.env` file that you can modify to your needs.
 
 You can get more detailed descriptions and more functionality by visiting [vlucas's GitHub](https://github.com/vlucas/phpdotenv).
 
-```php title="~/.env.example"
-APP_NAME="My App"
-APP_DESCRIPTION="This is my app"
+```php title="~/.env"
+APP_NAME="Beets PHP"
+APP_DESCRIPTION="A simple Beets PHP application"
 APP_ID=1
 APP_ENV=development
 APP_DEBUG=true
-APP_URL=http://myapp.local
-APP_COPYRIGHT="The Owner"
+APP_URL=http://localhost:9000
+APP_COPYRIGHT="Copyright Owner"
 
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=mysql_db
 DB_PORT=3306
-DB_DATABASE=dbname
+DB_DATABASE=beetsphp
 DB_CHARSET=utf8mb4
-DB_USERNAME=username
-DB_PASSWORD=password
+DB_USERNAME=root
+DB_PASSWORD=root
+
+# DB2_CONNECTION=
+# DB2_HOST=
+# DB2_PORT=
+# DB2_DATABASE=
+# DB2_CHARSET=
+# DB2_USERNAME=
+# DB2_PASSWORD=
+
+DEFAULT_DB=DB
 
 CSRF_SECRET_KEY=secretkey
 
@@ -53,7 +63,7 @@ The `APP_*` variables can be used to store values that are app specific and not 
 
 The `DB_*` variables are used within the Database.php class that handles your database requests so changing these variable names can break things.
 
-Every `DB_*` variable except `DB_CHARSET` is required to exist in the file as configured in the [`~/config/dotenv.php`](./dotenv.md) file.
+Every `DB_*` variable except `DB_CHARSET` is required to exist in the file as configured in the [`~/config/dotenv.php`](./dotenv.md) file. The additional database variables that are commented out by default optional.
 
 ## Usage
 
