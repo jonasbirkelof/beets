@@ -1,0 +1,235 @@
+:root {
+	--border-color: rgba(0, 0, 0, .1);
+	--border-color-dark: rgba(255, 255, 255, .2);
+	--border-radius-sm: 6px;
+	--border-radius: 10px;
+	--border-radius-lg: 16px;
+	--code-bg-color: rgba(210, 220, 230, 0.2);
+	--code-bg-color-dark: rgb(0, 0, 0, .3);
+	--inline-code-bg-color: rgba(175, 184, 193, 0.2);
+	--inline-code-bg-color-dark: rgba(0, 0, 0, .4);
+	--md-primary-fg-color:        #045163;
+	--md-primary-fg-color--light: #078faf;
+	--md-primary-fg-color--dark:  #012730;
+	--md-accent-fg-color:  		  var(--md-primary-fg-color--light);
+}
+
+/* Nav link accent color */
+.md-nav__item .md-nav__link--active,
+.md-typeset a {
+	color: var(--md-accent-fg-color);
+}
+.md-nav__item .md-nav__link--active:hover,
+.md-typeset a:hover {
+	filter: brightness(1.4);
+}
+
+/* Prevent enlargement of font size on bigger screen sizes */
+@media screen and (min-width:100em) {
+	html {
+		font-size: 125%
+	}
+}
+
+/* Headers */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5 {
+	color: #000;
+}
+body[data-md-color-scheme='slate'] {
+	.md-typeset h1,
+	.md-typeset h2,
+	.md-typeset h3,
+	.md-typeset h4,
+	.md-typeset h5 {
+		color: #fff;
+	}
+}
+
+/* Images */
+.md-content img:not(.twemoji) {
+	padding: 16px;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius);
+}
+body[data-md-color-scheme='slate'] {
+	.md-content img {
+		border-color: var(--border-color-dark);
+	}
+}
+
+/* Code blocks */
+body .highlight code {
+	font-size: 13px !important;
+}
+.highlight th.filename,
+.highlight span.filename {
+	border-top-left-radius: var(--border-radius) !important;
+	border-top-right-radius: var(--border-radius) !important;
+}
+.highlight span.filename,
+.highlight code {
+	background-color: var(--code-bg-color) !important;
+}
+.highlight code {
+	border-radius: var(--border-radius) !important;
+	border-radius: var(--border-radius) !important;
+}
+.highlight span.filename + pre > code,
+.highlight td.linenos + td.code code {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+}
+.highlight td.linenos + td.code code {
+	border-bottom-left-radius: 0 !important;
+}
+.highlight td.linenos {
+	border-bottom-left-radius: var(--border-radius) !important;
+}
+body[data-md-color-scheme='slate'] {
+	.highlight code {
+		background-color: var(--code-bg-color-dark) !important;
+	}
+	.highlight .filename {
+		background-color: #000 !important;
+	}
+}
+
+/* Inline code block */
+.md-typeset p code {
+	font-size: 85%;
+	padding: .2em .4em;
+	background-color: var(--inline-code-bg-color);
+	border-radius: var(--border-radius-sm);
+}
+body[data-md-color-scheme='slate'] {
+	.md-typeset p code {
+		background-color: var(--inline-code-bg-color-dark) !important;
+	}
+}
+
+/* Left and right sidebar labels */
+.md-nav__list label,
+.md-sidebar label {
+	color: #000 !important;
+}
+.md-sidebar .md-nav__title {
+	color: #fff !important;
+}
+body[data-md-color-scheme='slate'] {
+	.md-nav__list label,
+	.md-sidebar label {
+		color: #fff !important;
+	}
+}
+
+/* Logo images on about pages */
+h1 img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 80px;
+	border: 0 !important;
+	padding: 0 !important;
+}
+
+/*
+*
+* Fixing styles affected by Bootstrap
+*
+*/
+
+/* Fixes font size in code blocks */
+.highlight code {
+	font-size: unset !important;
+}
+/* Navigation disappears with <body> */
+body {
+	height: unset;
+}
+/* Paragraphs in admonitions should have a margin-top */
+.admonition p {
+	margin-top: 12px;
+}
+/* Demo box basic styling */
+.demo {
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.demo a {
+	color: var(--bs-link-color);
+}
+.demo a:hover {
+	color: var(--bs-link-hover-color);
+
+}
+/* Header 4 did not have a font-size */
+.md-typeset h4 {
+	font-size: 16px;
+}
+table code {
+	font-size: unset !important;
+}
+
+/*
+*
+* Bootstrap mods
+*
+*/
+
+body[data-md-color-scheme='slate'] .card {
+	border-color: var(--border-color-dark);
+	background-color: transparent !important;
+}
+
+/*
+*
+* Beets CSS Demo section
+*
+*/
+
+/* Demo section */
+.demo {
+	padding: 16px;
+	border: 1px solid var(--border-color);
+	border-radius: var(--border-radius);
+}
+body[data-md-color-scheme='slate'] {
+	.demo {
+		border-color: var(--border-color-dark);
+	}
+}
+
+/* Buttons */
+.demo .btn {
+	font-size: 16px;
+	padding: 6px 12px;
+	border-radius: 6px;
+}
+.demo .btn.btn-sm {
+	font-size: 14px;
+	padding: 4px 6px;
+}
+.demo .btn.btn-lg {
+	font-size: 20px;
+	padding: 8px 16px;
+}
+
+.file-tree {
+	font-family: var(--md-code-font-family);
+	font-size: 14px !important;
+	padding: 8px 12px;
+	margin: 1em 0;
+	background-color: var(--code-bg-color) !important;
+	border-radius: var(--border-radius) !important;
+}
+.file-tree pre {
+	margin: 0;
+}
+body[data-md-color-scheme='slate'] {
+	.file-tree {
+		background-color: var(--code-bg-color-dark) !important;
+	}
+}
