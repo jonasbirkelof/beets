@@ -1,13 +1,13 @@
-There are a couple of routes registered in `~/routes/web.php` that are used for administate and access your user accounts. There are also some controllers, models and views to help you get started.
+There are a couple of routes registered in `/src/routes/web.php` that are used for administate and access your user accounts. There are also some controllers, models and views to help you get started.
 
 ## Routes and controllers
 
-The following routes are registered in `~/routes/web.php` for the authentication controllers (and views).
+The following routes are registered in `/src/routes/web.php` for the authentication controllers (and views).
 
 ### LoginController()
 
 ```php title="Location"
-~/App/Http/Controllers/Authenticate/LoginController.php
+/src/App/Http/Controllers/Authenticate/LoginController.php
 ```
 
 | Rote   | Request method | Function  | Description                 |
@@ -19,7 +19,7 @@ The following routes are registered in `~/routes/web.php` for the authentication
 ### PasswordController()
 
 ```php title="Location"
-~/App/Http/Controllers/Authenticate/PasswordController.php
+/src/App/Http/Controllers/Authenticate/PasswordController.php
 ```
 
 | Rote                | Request method | Function | Description                      |
@@ -32,7 +32,7 @@ The following routes are registered in `~/routes/web.php` for the authentication
 ### UserController()
 
 ```php title="Location"
-~/App/Http/Controllers/UserController.php
+/src/App/Http/Controllers/UserController.php
 ```
 
 | Rote                 | Request method | Function  | Description           |
@@ -48,7 +48,7 @@ The following routes are registered in `~/routes/web.php` for the authentication
 ### ProfileController()
 
 ```php title="Location"
-~/App/Http/Controllers/ProfileController.php
+/src/App/Http/Controllers/ProfileController.php
 ```
 
 | Rote     | Request method | Function | Description            |
@@ -58,12 +58,12 @@ The following routes are registered in `~/routes/web.php` for the authentication
 
 ## Views
 
-The views are located in `~/public/views/authenticate` and `~/public/views/users`. The profile is located in `~/public/views`.
+The views are located in `/src/public/views/authenticate` and `/src/public/views/users`. The profile is located in `/src/public/views`.
 
 ### Login form
 
 ```php title="Location"
-~/public/views/authenticate/login.php
+/src/public/views/authenticate/login.php
 ```
 
 ```php title="Path"
@@ -82,7 +82,7 @@ Here is also a link to the reset password form (forgot password?).
 The user submits their email address to generate a password reset token and send it to their email if it's registered in the database.
 
 ```php title="Location"
-~/public/views/authenticate/reset-password.php
+/src/public/views/authenticate/reset-password.php
 ```
 
 ```php title="Path"
@@ -98,7 +98,7 @@ This path is only available when the user has a valid password reset token.
 This form lets the user chose a new password fot the account. After the password has been updated, the token is deleted and the link no longer works.
 
 ```php title="Location"
-~/public/views/authenticate/new-password.php
+/src/public/views/authenticate/new-password.php
 ```
 
 ```php title="Path"
@@ -112,7 +112,7 @@ This form lets the user chose a new password fot the account. After the password
 This page lists all users in the database. There are to tabs: active and inactive users. By clicking on the names you will show all the user information. If a password reset token has been created for a user, a key icon will be shown behind the name of the user.
 
 ```php title="Location"
-~/public/views/users/index.php
+/src/public/views/users/index.php
 ```
 
 ```php title="Path"
@@ -126,7 +126,7 @@ This page lists all users in the database. There are to tabs: active and inactiv
 Here you can create a new user.
 
 ```php title="Location"
-~/public/views/users/create.php
+/src/public/views/users/create.php
 ```
 
 ```php title="Path"
@@ -140,7 +140,7 @@ Here you can create a new user.
 Show all user information.
 
 ```php title="Location"
-~/public/views/users/show.php
+/src/public/views/users/show.php
 ```
 
 ```php title="Path"
@@ -159,7 +159,7 @@ Here you can edit the user information. You can also delete the youser from this
 Usually you don't want to delete a user since that might leave orphan posts in the database. You can inactivate their account instead to keep the data but preventing the user to log in.
 
 ```php title="Location"
-~/public/views/users/edit.php
+/src/public/views/users/edit.php
 ```
 
 ```php title="Path"
@@ -174,7 +174,7 @@ Usually you don't want to delete a user since that might leave orphan posts in t
 This view is for the logged in user to edit their own information. It provides less inromation than the edit page for admins for security reasons. The user can also update their password from this page.
 
 ```php title="Location"
-~/public/views/profile.php
+/src/public/views/profile.php
 ```
 
 ```php title="Path"

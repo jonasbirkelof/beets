@@ -3,7 +3,7 @@ The Error class handles incomming error messages and stores them in an array.
 ## Feedback.php
 
 ```php title="Location"
-~/App/Http/Feedback.php
+/src/App/Http/Feedback.php
 ```
 
 ```php title="Namespace"
@@ -75,7 +75,7 @@ The alert will fill the page width depending on where in you HTML you place `Fee
 
 [Read more about Bootstrap alerts](https://getbootstrap.com/docs/5.3/components/alerts/)
 
-![](../assets/images/feedback-alert.png)
+![](/docs/assets/images/feedback-alert.png)
 
 ```php
 Feedback::for('save_success')->alert([
@@ -91,7 +91,7 @@ The toast is shown at the top right corner of your screen. This can me modified 
 
 [Read more about Bootstrap toasts](https://getbootstrap.com/docs/5.3/components/toasts/).
 
-![](../assets/images/feedback-toast.png)
+![](/docs/assets/images/feedback-toast.png)
 
 ```php
 Feedback::for('save_success')->toast([
@@ -107,7 +107,7 @@ The callout will fill the page width depending on where in you HTML you place `F
 
 [Read more about Beets callouts](../beets-css/components/callout.md).
 
-![](../assets/images/feedback-callout.png)
+![](/docs/assets/images/feedback-callout.png)
 
 ```php
 Feedback::for('save_success')->callout([

@@ -1,12 +1,12 @@
 # .env
 
-This file contains the environmental variables that are used throughout the application. The library used for the env handlig is [vlucas PHP dotenv](https://github.com/vlucas/phpdotenv). The file is located at the project root and is loaded via the [`~/config/dotenv.php`](./dotenv.md) file.
+This file contains the environmental variables that are used throughout the application. The library used for the env handlig is [vlucas PHP dotenv](https://github.com/vlucas/phpdotenv). The file is located at the project root and is loaded via the [`/src/config/dotenv.php`](./dotenv.md) file.
 
 Beets PHP comes with a pre-configured `.env` file that you can modify to your needs.
 
 You can get more detailed descriptions and more functionality by visiting [vlucas's GitHub](https://github.com/vlucas/phpdotenv).
 
-```php title="~/.env"
+```php title="/src/.env"
 APP_NAME="Beets PHP"
 APP_DESCRIPTION="A simple Beets PHP application"
 APP_ID=1
@@ -63,7 +63,7 @@ The `APP_*` variables can be used to store values that are app specific and not 
 
 The `DB_*` variables are used within the Database.php class that handles your database requests so changing these variable names can break things.
 
-Every `DB_*` variable except `DB_CHARSET` is required to exist in the file as configured in the [`~/config/dotenv.php`](./dotenv.md) file. The additional database variables that are commented out by default optional.
+Every `DB_*` variable except `DB_CHARSET` is required to exist in the file as configured in the [`/src/config/dotenv.php`](./dotenv.md) file. The additional database variables that are commented out by default optional.
 
 ## Usage
 
@@ -76,7 +76,7 @@ $appName = $_SERVER['APP_NAME'];
 echo $appName; // My App
 ```
 
-Using them publicly can ba a safety issue though, so every env variable is defined as a constant in the `~/config/config.php` file. If you add custom env variables, make sure to add them to the config file.
+Using them publicly can ba a safety issue though, so every env variable is defined as a constant in the `/src/config/config.php` file. If you add custom env variables, make sure to add them to the config file.
 
 ```php
 echo APP_NAME; // My App
@@ -88,7 +88,7 @@ You can set the appllication environment with the variable `APP_ENV`. By default
 
 You can read mor on how to use the environment variable on the [Deploy page](../deploy.md).
 
-```php title=".env"
+```php title="/src/.env"
 APP_ENV=development
 ```
 
@@ -106,7 +106,7 @@ echo env(); // developemnt
 
 Along the `env()` function is the `debug()` function that retrieves the `APP_DEBUG` env variable and translates it into a boolean. Use this to toggle functionality that should only be used for debugging.
 
-```php title=".env"
+```php title="/src/.env"
 APP_DEBUG=true
 ```
 

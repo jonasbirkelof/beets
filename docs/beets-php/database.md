@@ -3,7 +3,7 @@ Beets PHP contains several tools for you to easily work with your database. On t
 ## Database.php
 
 ```php title="Location"
-~/App/Core/Database.php
+/src/App/Core/Database.php
 ```
 
 ```php title="Namespace"
@@ -20,7 +20,7 @@ To be able to connect to the datbase you will have to add your credentials to th
 
 If you use the database that is provided with Beets, you find the default values below. Make sure to change the root password to a strong one.
 
-```php title="~/.env"
+```php title="/src/.env"
 DB_CONNECTION=mysql
 DB_HOST=mysql_db
 DB_PORT=3306
@@ -30,7 +30,7 @@ DB_USERNAME=root
 DB_PASSWORD=root
 ```
 
-The table names can be accessed by constants defined in [~/config/config.php](../configuration/config.md).
+The table names can be accessed by constants defined in [/src/config/config.php](../configuration/config.md).
 
 ```php
 define('DB_USER_ACCOUNTS', DB_TABLE_PREFIX . 'admin__user_accounts');
@@ -62,7 +62,7 @@ If you want to use an additional database for fetching data you store someplace 
 
 You can change the database prefix from `DB2` to anything you like, i.e. `REMOTE`: `REMOTE_HOST`.
 
-```php title="~/.env"
+```php title="/src/.env"
 REMOTE_CONNECTION=mysql
 REMOTE_HOST=10.20.30.40
 REMOTE_PORT=3307
@@ -78,7 +78,7 @@ Use the [`connection()`](#connection) method for selecting what database to use.
 
 The database with prefix `DB` will be used by default. This means that you do not need to specify the connection when fetching the data. You can change the default database by changing the `DEFAULT_DB` value to the prefix of the preferred default database.
 
-```php title="~/.env"
+```php title="/src/.env"
 DEFAULT_DB=DB
 ```
 

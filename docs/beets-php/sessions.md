@@ -5,7 +5,7 @@ With Beets PHP you get a convenient session handling. With the built in methods 
 ## Session.php
 
 ```php title="Location"
-~/App/Core/Session.php
+/src/App/Core/Session.php
 ```
 
 ```php title="Namespace"
@@ -20,7 +20,7 @@ use App\Core\Session;
 
 A flash message is used to temporarely show a message and then immediately delete it. A common use case is when you need to show an alert when a task was successful (or unsuccessful), like "The post has been created".
 
-With Beets PHP, the flash messages is automatically deleted (unflashed) when the index page (~/public/index.php) has been loaded, right after the massage has been showed.
+With Beets PHP, the flash messages is automatically deleted (unflashed) when the index page (/src/public/index.php) has been loaded, right after the massage has been showed.
 
 The flash messages is stored in the global session array with the key `_flash`, like this:
 

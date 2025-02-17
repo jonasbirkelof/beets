@@ -1,8 +1,8 @@
-The database comes with four tables that are user with the user authentication and authorization. When making you SQL queries, you can access their names using constands that are defined in [~/config/config.php](../configuration/config.md).
+The database comes with four tables that are user with the user authentication and authorization. When making you SQL queries, you can access their names using constands that are defined in [/src/config/config.php](../configuration/config.md).
 
 ## Tables
 
-The table names can be accessed by constants defined in [~/config/config.php](../configuration/app.md).
+The table names can be accessed by constants defined in [/src/config/config.php](../configuration/app.md).
 
 ```php
 define('DB_USER_ACCOUNTS', DB_TABLE_PREFIX . 'admin__user_accounts');

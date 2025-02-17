@@ -5,7 +5,7 @@ With Beets PHP you get a convenient way to redirect the user to a different page
 ## Redirect.php
 
 ```php title="Location"
-~/App/Core/Redirect.php
+/src/App/Core/Redirect.php
 ```
 
 ```php title="Namespace"

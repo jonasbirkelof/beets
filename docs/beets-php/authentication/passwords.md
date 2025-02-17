@@ -12,12 +12,12 @@ The user enters its registered email addres and an email with instructions will 
 
 The email contains a link with a token that is used to connect the email recipient with the user account. By visiting the link the user can select a new password. When it is done, the token is deleted and the link is not accessible any more. 
 
-The token and link is only enabled for a limited time (default = 1 hour). If you want to change this, you can do it by changing the php constant `PASSWORD_RESET_TOKEN_EXPIRATION` in [~/config/config.php](../configuration/config.md). 
+The token and link is only enabled for a limited time (default = 1 hour). If you want to change this, you can do it by changing the php constant `PASSWORD_RESET_TOKEN_EXPIRATION` in [/src/config/config.php](../configuration/config.md). 
 
 ## Password.php
 
 ```php title="Location"
-~/App/Models/Authenticate/Password.php
+/src/App/Models/Authenticate/Password.php
 ```
 
 ```php title="Namespace"
@@ -48,7 +48,7 @@ f0621c42dfd2e0ac3969b97d02a38807
 
 ### Check token validity
 
-When the user tries to access the form to select a new password, the token is checked so that it is still valid. The default length is 1 hour but can be changed in [~/config/config.php](../configuration/config.md) (`PASSWORD_RESET_TOKEN_EXPIRATION`).
+When the user tries to access the form to select a new password, the token is checked so that it is still valid. The default length is 1 hour but can be changed in [/src/config/config.php](../configuration/config.md) (`PASSWORD_RESET_TOKEN_EXPIRATION`).
 
 If the expiration time has passed the token is deleted and the method returns `false`.
 

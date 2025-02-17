@@ -5,7 +5,7 @@ With Beets PHP you get a simple CSRF (Cross Site Request Forgery) protection cla
 ## CSRF.php
 
 ```php title="Location"
-~/App/Core/CSRF.php
+/src/App/Core/CSRF.php
 ```
 
 ```php title="Namespace"

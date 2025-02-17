@@ -1,8 +1,8 @@
 # config.php
 
-This file is for storing app-wide constants and variables that doesn't fit in the [`.env`](./env.md) file. The file is located inside the `~/config/` folder.
+This file is for storing app-wide constants and variables that doesn't fit in the [`.env`](./env.md) file. The file is located inside the `/src/config/` folder.
 
-```php title="~/config/config.php"
+```php title="/src/config/config.php"
 // Environment variables
 define('APP_NAME', $_ENV['APP_NAME']);
 define('APP_DESCRIPTION', $_ENV['APP_DESCRIPTION']);

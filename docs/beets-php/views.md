@@ -1,6 +1,6 @@
 A view is a page that is viewed by the visitor. The views should contain as little programming logic as possible. That responsibility lays with the controller that is loading the view by instructions from the router.
 
-The views are located in the `~/public/views` folder. This folder contains the pages that your application has, including the error pages (404-pages and such) and [authentication pages](./authentication/routes-and-views.md).
+The views are located in the `/src/public/views` folder. This folder contains the pages that your application has, including the error pages (404-pages and such) and [authentication pages](./authentication/routes-and-views.md).
 
 ## Loading a view
 
@@ -56,15 +56,15 @@ echo VIEWS; // $_SERVER['DOCUMENT_ROOT'] . APP_FOLDER . '/public/views'
 
 ## Partials
 
-To load recurring elements in a view, such as the HTML head, a sidebar or a navigation we use what is called "partials". A partial is a snippet of code that can be included in a view. The partials files are located in the `~/public/partials` folder.
+To load recurring elements in a view, such as the HTML head, a sidebar or a navigation we use what is called "partials". A partial is a snippet of code that can be included in a view. The partials files are located in the `/src/public/partials` folder.
 
-To load a partial you pass the partial name (without file extension) in the `parial()` helper function. This code will load the file ´page-head.php´ from the `~/public/partials` folder:
+To load a partial you pass the partial name (without file extension) in the `parial()` helper function. This code will load the file ´page-head.php´ from the `/src/public/partials` folder:
 
 ```html
 <?php partial('page-head') ?>
 ```
 
-If you happen to use a file extension that is not ".php", you can change this with the constant `DEFAULT_FILE_EXTENSION` in the `~/config/config.php` file.
+If you happen to use a file extension that is not ".php", you can change this with the constant `DEFAULT_FILE_EXTENSION` in the `/src/config/config.php` file.
 
 Other partials that are included with Beets PHP by default are:
 

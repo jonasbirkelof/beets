@@ -1,8 +1,8 @@
 # data.php
 
-This file is for storing app-wide static data like arrays. The file is located inside the `~/config/` folder. 
+This file is for storing app-wide static data like arrays. The file is located inside the `/src/config/` folder. 
 
-```php title="~/config/data.php"
+```php title="/src/config/data.php"
 $userAccountStatusCodes = [
 	0 => [
 		'title' => 'Inactive account',

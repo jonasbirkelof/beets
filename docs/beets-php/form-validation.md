@@ -3,7 +3,7 @@ Beets PHP has a class with methods for form validation. Access them by importing
 ## Form.php
 
 ```php title="Location"
-~/App/Core/Form.php
+/src/App/Core/Form.php
 ```
 
 ```php title="Namespace"

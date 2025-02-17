@@ -8,14 +8,14 @@ The best practise is to seperate you backend and frontend on your host. For exam
 
 <div class="file-tree">
 <pre>
-~ (website root)
-&#9500;&#9472;&#9472; httpd_public / www
+/ (website root)
+&#9500;&#9472;&#9472; httpd_public/ or www/
 &#9474;   &#9492;&#9472;&#9472; [frontend files]
 &#9492;&#9472;&#9472; [backend files]
 </pre>
 </div>
 
-With Beets PHP, your frontend files are the ones in the `~/public` folder as well as the main `index.php` file in the project root. The backend files are all other files and folders.
+With Beets PHP, your frontend files are the ones in the `/src/public/` folder as well as the main `index.php` file in the project root. The backend files are all other files and folders.
 
 You want to do this to make you important files, like the `.env` file with your database credentials, API keys, etc inaccessible to your visitors. The visitors will only have access to the public folder that your webhost has set up. It can be named `www`, `httpd_public`, `public`, `http` or something like that.
 
@@ -37,7 +37,7 @@ Below is an example of a file structure that should work for this situation. Jus
 
 <div class="file-tree">
 <pre>
-~ root/
+/
 &#9500;&#9472;&#9472; httpd_public/
 &#9474;   &#9500;&#9472;&#9472; assets/
 &#9474;   &#9500;&#9472;&#9472; partials/
@@ -81,7 +81,7 @@ Below is an example of a file structure that should work for this situation.
 
 <div class="file-tree">
 <pre>
-~ root/
+/
 &#9492;&#9472;&#9472; httpd_public/
     &#9500;&#9472;&#9472; App/
     &#9500;&#9472;&#9472; config/
@@ -104,13 +104,13 @@ Below is an example of a file structure that should work for this situation.
 
 ### Application as subdomain
 
-If you application is deployed as a subdomain like **app.example.com** instead of **example.com**, you might have to specify that in the `~/config/config.php` file. Update the variable `$appFolder` the the subfolder name. This will change the project root that is used for loading files and paths through out the application.
+If you application is deployed as a subdomain like **app.example.com** instead of **example.com**, you might have to specify that in the `/src/config/config.php` file. Update the variable `$appFolder` the the subfolder name. This will change the project root that is used for loading files and paths through out the application.
 
 Below is anexample of a file structure when the application is a subdomain.
 
 <div class="file-tree">
 <pre>
-~ root/
+/
 &#9492;&#9472;&#9472; httpd_public/
     &#9492;&#9472;&#9472; subdomain/
         &#9500;&#9472;&#9472; App/

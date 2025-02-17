@@ -1,4 +1,4 @@
-If you want to add our own custom functions you can use the file `functions.php` that is located in the `~/App/Helpers/` folder. We separate the core app functions and the custom user functions for safety reasons.
+If you want to add our own custom functions you can use the file `functions.php` that is located in the `/src/App/Helpers/` folder. We separate the core app functions and the custom user functions for safety reasons.
 
 This file is automatically included via the autoloader.
 
@@ -10,7 +10,7 @@ Below are some examples of functions that you might want to put here.
 
 If you have added an array with static data that should be used across the app, you might want to build a function to easily access it:
 
-```php title="~/config/data.php"
+```php title="/src/config/data.php"
 $lookup = [
 	0 => 'zero',
 	1 => 'one',
@@ -18,7 +18,7 @@ $lookup = [
 ];
 ```
 
-```php title="~/App/Helpers/functions.php"
+```php title="/src/App/Helpers/functions.php"
 function lookup($input = null)
 {
 	require APP_ROOT . '/config/data.php';
@@ -34,7 +34,7 @@ echo lookup(); // No input submitted
 
 ### Convert checkbox state
 
-```php title="~/App/Helpers/functions.php"
+```php title="/src/App/Helpers/functions.php"
 function checkboxState($input)
 {
 	return $input === 1 ? "checked" : null;

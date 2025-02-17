@@ -62,7 +62,7 @@ if (sysadmin() || admin()) { echo "Edit user"; }
 ## Permission methods
 
 ```php title="Location"
-~/App/Models/Authenticate/Permission.php
+/src/App/Models/Authenticate/Permission.php
 ```
 
 ```php title="Namespace"
@@ -115,7 +115,7 @@ $permissions = Permissions::get(
 ## Role methods
 
 ```php title="Location"
-~/App/Models/Authenticate/Role.php
+/src/App/Models/Authenticate/Role.php
 ```
 
 ```php title="Namespace"

@@ -1,4 +1,4 @@
-# ![Image title](../assets/images/beetsphp_col_inv_100x421.png#only-dark) ![Image title](../assets/images/beetsphp_col_100x421.png#only-light)
+# ![Image title](/docs/assets/images/beetsphp_col_inv_100x421.png#only-dark) ![Image title](/docs/assets/images/beetsphp_col_100x421.png#only-light)
 
 Beets PHP is a micro framework, scaffolding and jump start to your own PHP projects. Beets PHP uses a RESTful aproach with an MVC filesystem and includes a router, autoloader, SCSS compiler, Browser-sync, Docker compatibility, a complete user administration system and more!
 
