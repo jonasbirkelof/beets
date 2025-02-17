@@ -1,4 +1,4 @@
-Beets PHP uses the [Bramus Router](https://github.com/bramus/router) for routing HTTP requests. The router is required in the main `~/index.php` file and is always loaded. 
+Beets PHP extends the [Bramus Router](https://github.com/bramus/router) for routing HTTP requests. The routing file is required in the main `~/index.php` file and is always loaded. 
 
 ## web.php
 
@@ -6,7 +6,7 @@ Beets PHP uses the [Bramus Router](https://github.com/bramus/router) for routing
 ~/routes/web.php
 ```
 
-The router file is populated with several routes out of the box so that you have good examples of how to use it. For detailed instructions on how to use the router, please visit the [GitHub page](https://github.com/bramus/router).
+The routing file is populated with several routes out of the box so that you have good examples of how to use it. For detailed instructions on how to use the router, please visit the [GitHub page](https://github.com/bramus/router).
 
 ## Custom request methods
 

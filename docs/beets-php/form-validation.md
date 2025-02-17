@@ -51,7 +51,7 @@ if (! $Form->errors()) {
 	// Flash errors and old values to the session
 	$Form->flashErrors();
 
-	Session::flash('old', [
+	Session::flashOld([
 		'name' => $name,
 		'email' => $email
 	]);
@@ -204,7 +204,7 @@ $inputEmail = "notanemail";
 $Form->validate('input_email', $inputEmail)->email();
 $Form->flashErrors();
 
-Session::flash('old', [
+Session::flashOld([
 	'input_email' => $inputEmail,
 ]);
 

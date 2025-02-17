@@ -40,22 +40,6 @@ Follow these steps to get started with Beets PHP by using Docker.
 
     - `$appFolder`: If your application lives in a subfolder to your root, set the folder name here.
     - `$dbTablePrefix`: If you only have one database available, like on a shared host, and have to give your table a prefix you set that prefix here.
-    
-1. Open the file `~/src/vendor/bramus/router/src/Bramus/Router.php`.
-
-1. Find the `run()` method around line 274. 
-
-    Replace this line:
-
-    ```php
-    $this->requestedMethod = $this->getRequestMethod();
-    ```
-
-    ...with this line and save the file:
-
-    ```php
-    $this->requestedMethod = $_POST['_method'] ?? $this->getRequestMethod();
-    ```
 
 1. Build the application to generate JavaScript and CSS files:
 
@@ -146,20 +130,6 @@ The standard port 80 is shown for the URLs but you really don't need to have it 
     .browserSync({
       proxy: 'beetsphp.local:80'
     ])
-    ```
-
-1. Open the router file `~/vendor/bramus/router/src/Bramus/Router.php` and find the `run()` method around line 274.
-
-    Replace this line:
-
-    ```php
-    $this->requestedMethod = $this->getRequestMethod();
-    ```
-    
-    ...with this line and save the file:
-
-    ```php
-    $this->requestedMethod = $_POST['_method'] ?? $this->getRequestMethod();
     ```
 
 1. Add a virtual host for the project by adding the following code to `<path-to-xampp>/apache/conf/extra/httpd-vhosts.conf`:
