@@ -1,4 +1,4 @@
-Beets PHP contains several tools for you to easily work with your database. On this page you will learn how to setup and connect to the tadabase ase well as basic CRUD functionallity.
+Beets PHP contains several tools for you to easily work with your database. On this page you will learn how to setup and connect to the tadabase ase well as basic CRUD functionallity. Beets supports the use of multiple databases.
 
 ## Database.php
 
@@ -18,16 +18,16 @@ use App\Core\Database as DB;
 
 To be able to connect to the datbase you will have to add your credentials to the [.env](./configuration/env.md) file. You will get this information from your hosting service. 
 
-If you are using the local database you can set `DB_DATABASE=` to your database name, `DB_USENAME=root` and `DB_PASSWORD=` to be empty like the example below.
+If you use the database that is provided with Beets, you find the default values below. Make sure to change the root password to a strong one.
 
 ```php title="~/.env"
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=mysql_db
 DB_PORT=3306
-DB_DATABASE=dbname
+DB_DATABASE=beetsphp
 DB_CHARSET=utf8mb4
-DB_USERNAME=username
-DB_PASSWORD=
+DB_USERNAME=root
+DB_PASSWORD=root
 ```
 
 The table names can be accessed by constants defined in [~/config/config.php](../configuration/config.md).
@@ -56,6 +56,32 @@ define('DB_TABLE_PREFIX', $dbTablePrefix);
 define('DB_USER_ACCOUNTS', DB_TABLE_PREFIX . 'admin__user_accounts');
 ```
 
+### Additional databases
+
+If you want to use an additional database for fetching data you store someplace else, uncomment the additional credential values in the `.env` file. You will have to change the credentials as well as the host IP/URL and port. 
+
+You can change the database prefix from `DB2` to anything you like, i.e. `REMOTE`: `REMOTE_HOST`.
+
+```php title="~/.env"
+REMOTE_CONNECTION=mysql
+REMOTE_HOST=10.20.30.40
+REMOTE_PORT=3307
+REMOTE_DATABASE=dbname_2
+REMOTE_CHARSET=utf8mb4
+REMOTE_USERNAME=username_2
+REMOTE_PASSWORD=password_2
+```
+
+Use the [`connection()`](#connection) method for selecting what database to use.
+
+### Default database
+
+The database with prefix `DB` will be used by default. This means that you do not need to specify the connection when fetching the data. You can change the default database by changing the `DEFAULT_DB` value to the prefix of the preferred default database.
+
+```php title="~/.env"
+DEFAULT_DB=DB
+```
+
 ## Connect to the database
 
 By importing Database.php with `use App\Core\Database` you get access to all database functionality. The connection is initiated in the `__construct()` which retrieves the credentials from the [.env](./configuration/env.md) file and uses them to set up a new PDO object.
@@ -77,6 +103,17 @@ $inputName = escape($formData['input_name']);
 ## Database methods
 
 Beets PHP comes with a couple of handy tools for the most commonly used operations but feel free to add your own methods that fits your needs.
+
+### connection()
+
+If you want to use the default database as specified in the `.env` file, you do not need to use the `connection()` method!
+
+To use an alternative database, pass the prefix of that connection as an argument of the `connection()` method.
+
+```php
+$sql = "SELECT * FROM users";
+$result = DB::connection('REMOTE')->query($sql)->fetchAll();
+```
 
 ### query()
 
